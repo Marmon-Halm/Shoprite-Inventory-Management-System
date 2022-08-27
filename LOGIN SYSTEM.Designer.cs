@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN_SYSTEM));
             this.loginUsername = new System.Windows.Forms.TextBox();
             this.lUsername = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.loginPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioAdmin = new System.Windows.Forms.RadioButton();
+            this.radioUser = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -64,16 +64,16 @@
             this.lUsername.Text = "Username";
             this.lUsername.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox2
+            // loginPassword
             // 
-            this.textBox2.Font = new System.Drawing.Font("Georgia", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.ForeColor = System.Drawing.Color.Salmon;
-            this.textBox2.Location = new System.Drawing.Point(1139, 405);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Enter Password";
-            this.textBox2.Size = new System.Drawing.Size(296, 28);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.loginPassword.Font = new System.Drawing.Font("Georgia", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.loginPassword.ForeColor = System.Drawing.Color.Salmon;
+            this.loginPassword.Location = new System.Drawing.Point(1139, 405);
+            this.loginPassword.Name = "loginPassword";
+            this.loginPassword.PlaceholderText = "Enter Password";
+            this.loginPassword.Size = new System.Drawing.Size(296, 28);
+            this.loginPassword.TabIndex = 0;
+            this.loginPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -88,7 +88,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.loginButton.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.loginButton.Location = new System.Drawing.Point(1213, 463);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(169, 42);
@@ -116,29 +116,29 @@
             this.label2.Text = "Password";
             this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
-            // radioButton1
+            // radioAdmin
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.Location = new System.Drawing.Point(1178, 193);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(78, 24);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Admin";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioAdmin.AutoSize = true;
+            this.radioAdmin.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioAdmin.Location = new System.Drawing.Point(1178, 193);
+            this.radioAdmin.Name = "radioAdmin";
+            this.radioAdmin.Size = new System.Drawing.Size(78, 24);
+            this.radioAdmin.TabIndex = 5;
+            this.radioAdmin.TabStop = true;
+            this.radioAdmin.Text = "Admin";
+            this.radioAdmin.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioUser
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(1320, 193);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(62, 24);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "User";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioUser.AutoSize = true;
+            this.radioUser.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioUser.Location = new System.Drawing.Point(1320, 193);
+            this.radioUser.Name = "radioUser";
+            this.radioUser.Size = new System.Drawing.Size(62, 24);
+            this.radioUser.TabIndex = 5;
+            this.radioUser.TabStop = true;
+            this.radioUser.Text = "User";
+            this.radioUser.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -156,22 +156,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1513, 680);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioUser);
+            this.Controls.Add(this.radioAdmin);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lUsername);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.loginPassword);
             this.Controls.Add(this.loginUsername);
             this.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "LOGIN_SYSTEM";
             this.Text = "LOGIN_SYSTEM";
+            this.Load += new System.EventHandler(this.LOGIN_SYSTEM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,13 +183,13 @@
 
         private TextBox loginUsername;
         private Label lUsername;
-        private TextBox textBox2;
+        private TextBox loginPassword;
         private Label label3;
         private Button loginButton;
         private Panel panel1;
         private Label label2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton radioAdmin;
+        private RadioButton radioUser;
         private PictureBox pictureBox2;
     }
 }

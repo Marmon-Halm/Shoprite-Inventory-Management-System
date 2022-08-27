@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(REGISTER_SYSTEM));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.salesLogout = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.hpReports = new System.Windows.Forms.Button();
@@ -37,11 +39,9 @@
             this.hpProductCatButton = new System.Windows.Forms.Button();
             this.hProductButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.salesLogout = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,6 +54,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1378, 90);
             this.panel1.TabIndex = 0;
+            // 
+            // salesLogout
+            // 
+            this.salesLogout.AutoSize = true;
+            this.salesLogout.Font = new System.Drawing.Font("Georgia", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.salesLogout.Location = new System.Drawing.Point(1192, 40);
+            this.salesLogout.Name = "salesLogout";
+            this.salesLogout.Size = new System.Drawing.Size(74, 21);
+            this.salesLogout.TabIndex = 4;
+            this.salesLogout.Text = "Log Out";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.ImageLocation = "";
+            this.pictureBox2.Location = new System.Drawing.Point(75, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(266, 90);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // panel2
             // 
@@ -115,33 +136,13 @@
             // 
             this.hProductButton.BackColor = System.Drawing.Color.Gainsboro;
             this.hProductButton.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hProductButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hProductButton.Location = new System.Drawing.Point(25, 95);
             this.hProductButton.Name = "hProductButton";
             this.hProductButton.Size = new System.Drawing.Size(201, 44);
             this.hProductButton.TabIndex = 3;
             this.hProductButton.Text = "Products";
             this.hProductButton.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.ImageLocation = "";
-            this.pictureBox2.Location = new System.Drawing.Point(75, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(266, 87);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // salesLogout
-            // 
-            this.salesLogout.AutoSize = true;
-            this.salesLogout.Font = new System.Drawing.Font("Georgia", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.salesLogout.Location = new System.Drawing.Point(1192, 40);
-            this.salesLogout.Name = "salesLogout";
-            this.salesLogout.Size = new System.Drawing.Size(74, 21);
-            this.salesLogout.TabIndex = 4;
-            this.salesLogout.Text = "Log Out";
             // 
             // REGISTER_SYSTEM
             // 
@@ -158,9 +159,9 @@
             this.Load += new System.EventHandler(this.REGISTER_SYSTEM_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

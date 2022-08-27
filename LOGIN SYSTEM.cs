@@ -15,6 +15,7 @@ namespace Shoprite_Inventory_Management
         public LOGIN_SYSTEM()
         {
             InitializeComponent();
+            //OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Inventory Database.mdf")
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -33,6 +34,11 @@ namespace Shoprite_Inventory_Management
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LOGIN_SYSTEM_Load(object sender, EventArgs e)
         {
 
         }

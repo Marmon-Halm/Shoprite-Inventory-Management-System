@@ -31,5 +31,10 @@ namespace Shoprite_Inventory_Management
         {
 
         }
+
+        private void hProductButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
