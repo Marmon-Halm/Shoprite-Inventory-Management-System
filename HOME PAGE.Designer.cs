@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1378, 90);
+            this.panel1.Size = new System.Drawing.Size(1378, 84);
             this.panel1.TabIndex = 0;
             // 
             // salesLogout
@@ -72,7 +72,7 @@
             this.pictureBox2.ImageLocation = "";
             this.pictureBox2.Location = new System.Drawing.Point(75, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(266, 90);
+            this.pictureBox2.Size = new System.Drawing.Size(266, 84);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
@@ -84,9 +84,9 @@
             this.panel2.Controls.Add(this.hpProductCatButton);
             this.panel2.Controls.Add(this.hProductButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 90);
+            this.panel2.Location = new System.Drawing.Point(0, 84);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 537);
+            this.panel2.Size = new System.Drawing.Size(260, 543);
             this.panel2.TabIndex = 2;
             // 
             // label2
@@ -101,8 +101,9 @@
             // 
             // hpReports
             // 
-            this.hpReports.BackColor = System.Drawing.Color.Gainsboro;
+            this.hpReports.BackColor = System.Drawing.Color.Salmon;
             this.hpReports.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hpReports.ForeColor = System.Drawing.Color.White;
             this.hpReports.Location = new System.Drawing.Point(25, 361);
             this.hpReports.Name = "hpReports";
             this.hpReports.Size = new System.Drawing.Size(201, 44);
@@ -112,8 +113,9 @@
             // 
             // hpUserManagement
             // 
-            this.hpUserManagement.BackColor = System.Drawing.Color.Gainsboro;
+            this.hpUserManagement.BackColor = System.Drawing.Color.Salmon;
             this.hpUserManagement.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hpUserManagement.ForeColor = System.Drawing.Color.White;
             this.hpUserManagement.Location = new System.Drawing.Point(12, 275);
             this.hpUserManagement.Name = "hpUserManagement";
             this.hpUserManagement.Size = new System.Drawing.Size(235, 44);
@@ -123,8 +125,9 @@
             // 
             // hpProductCatButton
             // 
-            this.hpProductCatButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.hpProductCatButton.BackColor = System.Drawing.Color.Salmon;
             this.hpProductCatButton.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hpProductCatButton.ForeColor = System.Drawing.Color.White;
             this.hpProductCatButton.Location = new System.Drawing.Point(12, 183);
             this.hpProductCatButton.Name = "hpProductCatButton";
             this.hpProductCatButton.Size = new System.Drawing.Size(235, 44);
@@ -134,8 +137,9 @@
             // 
             // hProductButton
             // 
-            this.hProductButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.hProductButton.BackColor = System.Drawing.Color.Salmon;
             this.hProductButton.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.hProductButton.ForeColor = System.Drawing.Color.White;
             this.hProductButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.hProductButton.Location = new System.Drawing.Point(25, 95);
             this.hProductButton.Name = "hProductButton";

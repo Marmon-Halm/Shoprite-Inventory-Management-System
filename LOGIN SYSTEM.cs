@@ -42,5 +42,31 @@ namespace Shoprite_Inventory_Management
         {
 
         }
+
+        private void showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPassword.Checked == false)
+               loginPassword.UseSystemPasswordChar = true;
+            else 
+                loginPassword.UseSystemPasswordChar = false;
+        }
+
+        private void loginPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginUsernameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeBox_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to exit the application","Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

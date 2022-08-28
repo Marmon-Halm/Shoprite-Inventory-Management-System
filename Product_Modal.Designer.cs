@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Modal));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,8 +42,9 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PManageCloseButton = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PManageCloseButton)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -135,7 +135,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Salmon;
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.PManageCloseButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -183,14 +183,17 @@
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel2
+            // PManageCloseButton
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(622, 19);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(36, 27);
-            this.panel2.TabIndex = 2;
+            this.PManageCloseButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PManageCloseButton.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
+            this.PManageCloseButton.Location = new System.Drawing.Point(616, 12);
+            this.PManageCloseButton.Name = "PManageCloseButton";
+            this.PManageCloseButton.Size = new System.Drawing.Size(42, 37);
+            this.PManageCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PManageCloseButton.TabIndex = 2;
+            this.PManageCloseButton.TabStop = false;
+            this.PManageCloseButton.Click += new System.EventHandler(this.PManageCloseButton_Click);
             // 
             // Product_Modal
             // 
@@ -215,6 +218,7 @@
             this.Text = "Product_Modal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PManageCloseButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +240,6 @@
         private TextBox textBox4;
         private Button button1;
         private Button button2;
-        private Panel panel2;
+        private PictureBox PManageCloseButton;
     }
 }

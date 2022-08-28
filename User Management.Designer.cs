@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Management));
             this.uDataView = new System.Windows.Forms.DataGridView();
-            this.uPanel = new System.Windows.Forms.Panel();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uUname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ufname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +41,9 @@
             this.uPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.uDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.uHeader = new System.Windows.Forms.Label();
+            this.uPanel = new System.Windows.Forms.Panel();
             this.uUserButton = new System.Windows.Forms.Button();
+            this.uHeader = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uDataView)).BeginInit();
             this.uPanel.SuspendLayout();
             this.SuspendLayout();
@@ -77,16 +77,6 @@
             this.uDataView.RowTemplate.Height = 25;
             this.uDataView.Size = new System.Drawing.Size(1280, 471);
             this.uDataView.TabIndex = 1;
-            // 
-            // uPanel
-            // 
-            this.uPanel.BackColor = System.Drawing.Color.White;
-            this.uPanel.Controls.Add(this.uUserButton);
-            this.uPanel.Controls.Add(this.uDataView);
-            this.uPanel.Location = new System.Drawing.Point(36, 82);
-            this.uPanel.Name = "uPanel";
-            this.uPanel.Size = new System.Drawing.Size(1318, 552);
-            this.uPanel.TabIndex = 2;
             // 
             // Number
             // 
@@ -154,25 +144,36 @@
             this.uDelete.Name = "uDelete";
             this.uDelete.Width = 50;
             // 
-            // uHeader
+            // uPanel
             // 
-            this.uHeader.AutoSize = true;
-            this.uHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.uHeader.Location = new System.Drawing.Point(74, 32);
-            this.uHeader.Name = "uHeader";
-            this.uHeader.Size = new System.Drawing.Size(220, 27);
-            this.uHeader.TabIndex = 3;
-            this.uHeader.Text = "User Management";
+            this.uPanel.BackColor = System.Drawing.Color.White;
+            this.uPanel.Controls.Add(this.uUserButton);
+            this.uPanel.Controls.Add(this.uDataView);
+            this.uPanel.Location = new System.Drawing.Point(35, 69);
+            this.uPanel.Name = "uPanel";
+            this.uPanel.Size = new System.Drawing.Size(1318, 597);
+            this.uPanel.TabIndex = 2;
             // 
             // uUserButton
             // 
+            this.uUserButton.BackColor = System.Drawing.Color.Salmon;
             this.uUserButton.Font = new System.Drawing.Font("Georgia", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uUserButton.Location = new System.Drawing.Point(1097, 14);
             this.uUserButton.Name = "uUserButton";
             this.uUserButton.Size = new System.Drawing.Size(146, 41);
             this.uUserButton.TabIndex = 2;
             this.uUserButton.Text = "Create User";
-            this.uUserButton.UseVisualStyleBackColor = true;
+            this.uUserButton.UseVisualStyleBackColor = false;
+            // 
+            // uHeader
+            // 
+            this.uHeader.AutoSize = true;
+            this.uHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.uHeader.Location = new System.Drawing.Point(72, 21);
+            this.uHeader.Name = "uHeader";
+            this.uHeader.Size = new System.Drawing.Size(220, 27);
+            this.uHeader.TabIndex = 3;
+            this.uHeader.Text = "User Management";
             // 
             // User_Management
             // 

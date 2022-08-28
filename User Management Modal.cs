@@ -21,5 +21,41 @@ namespace Shoprite_Inventory_Management
         {
 
         }
+
+        private void Gender_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userManagementCloseButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Terminate Window", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void User_Management_Modal_List(object sender, EventArgs e)
+        {
+               //List<Gender> list = new List<Gender>();
+               //list.Add(new Gender() { ID = 1, Name = "Male"});
+               //list.Add(new Gender() { ID = 2, Name = "Female"});
+        }
+
+        private void userGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

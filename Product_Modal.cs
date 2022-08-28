@@ -26,5 +26,13 @@ namespace Shoprite_Inventory_Management
         {
 
         }
+
+        private void PManageCloseButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Terminate Window", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
