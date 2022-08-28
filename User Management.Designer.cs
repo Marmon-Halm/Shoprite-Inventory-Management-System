@@ -164,6 +164,7 @@
             this.uUserButton.TabIndex = 2;
             this.uUserButton.Text = "Create User";
             this.uUserButton.UseVisualStyleBackColor = false;
+            this.uUserButton.Click += new System.EventHandler(this.uUserButton_Click);
             // 
             // uHeader
             // 
@@ -186,6 +187,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Management";
             this.Text = "User_Management";
+            this.Load += new System.EventHandler(this.User_Management_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uDataView)).EndInit();
             this.uPanel.ResumeLayout(false);
             this.ResumeLayout(false);

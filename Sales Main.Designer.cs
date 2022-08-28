@@ -63,7 +63,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.salesLogout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -106,7 +106,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.LightGray;
+            this.panel5.BackColor = System.Drawing.Color.Gainsboro;
             this.panel5.Location = new System.Drawing.Point(30, 80);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(301, 546);
@@ -201,7 +201,7 @@
             // 
             // salesCartPanel
             // 
-            this.salesCartPanel.BackColor = System.Drawing.Color.LightGray;
+            this.salesCartPanel.BackColor = System.Drawing.Color.Gainsboro;
             this.salesCartPanel.Controls.Add(this.panel4);
             this.salesCartPanel.Location = new System.Drawing.Point(38, 30);
             this.salesCartPanel.Name = "salesCartPanel";
@@ -311,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1563, 710);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

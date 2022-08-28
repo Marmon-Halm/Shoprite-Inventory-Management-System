@@ -30,17 +30,15 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.reportsDataGrid = new System.Windows.Forms.DataGridView();
-            this.reportsHeader = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.rCategory = new System.Windows.Forms.Label();
             this.rGenerateButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rCategory = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.reportsDataGrid = new System.Windows.Forms.DataGridView();
             this.pNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,13 +46,22 @@
             this.qSold = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qRemaining = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportsHeader = new System.Windows.Forms.Label();
+            this.pp2 = new System.Windows.Forms.Button();
+            this.pp1 = new System.Windows.Forms.Button();
+            this.ppNext = new System.Windows.Forms.Label();
+            this.ppPrevious = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.reportsDataGrid);
+            this.panel1.Controls.Add(this.pp2);
+            this.panel1.Controls.Add(this.pp1);
+            this.panel1.Controls.Add(this.ppNext);
+            this.panel1.Controls.Add(this.ppPrevious);
             this.panel1.Controls.Add(this.rGenerateButton);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.searchBox);
@@ -63,49 +70,43 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(39, 48);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1395, 533);
+            this.panel1.Size = new System.Drawing.Size(1395, 608);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // rGenerateButton
             // 
-            this.panel2.Controls.Add(this.reportsDataGrid);
-            this.panel2.Location = new System.Drawing.Point(28, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1336, 428);
-            this.panel2.TabIndex = 0;
+            this.rGenerateButton.BackColor = System.Drawing.Color.Salmon;
+            this.rGenerateButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rGenerateButton.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rGenerateButton.ForeColor = System.Drawing.Color.White;
+            this.rGenerateButton.Location = new System.Drawing.Point(985, 24);
+            this.rGenerateButton.Name = "rGenerateButton";
+            this.rGenerateButton.Size = new System.Drawing.Size(128, 38);
+            this.rGenerateButton.TabIndex = 5;
+            this.rGenerateButton.Text = "Generate Report";
+            this.rGenerateButton.UseVisualStyleBackColor = false;
+            this.rGenerateButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dateTimePicker1
+            // comboBox1
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Location = new System.Drawing.Point(361, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 21);
-            this.dateTimePicker1.TabIndex = 1;
+            this.comboBox1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(106, 35);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(149, 23);
+            this.comboBox1.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // searchBox
             // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker2.Location = new System.Drawing.Point(670, 35);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(218, 21);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(283, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Start Date:";
+            this.searchBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBox.Location = new System.Drawing.Point(1169, 32);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(164, 23);
+            this.searchBox.TabIndex = 3;
+            this.searchBox.Text = "Search For Report";
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // label2
             // 
@@ -117,15 +118,45 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "End Date:";
             // 
-            // searchBox
+            // rCategory
             // 
-            this.searchBox.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchBox.Location = new System.Drawing.Point(1169, 32);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(164, 23);
-            this.searchBox.TabIndex = 3;
-            this.searchBox.Text = "Search For Report";
-            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
+            this.rCategory.AutoSize = true;
+            this.rCategory.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rCategory.Location = new System.Drawing.Point(35, 37);
+            this.rCategory.Name = "rCategory";
+            this.rCategory.Size = new System.Drawing.Size(65, 17);
+            this.rCategory.TabIndex = 2;
+            this.rCategory.Text = "Category";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(283, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Start Date:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker2.Location = new System.Drawing.Point(670, 35);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(218, 21);
+            this.dateTimePicker2.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Location = new System.Drawing.Point(361, 35);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(214, 21);
+            this.dateTimePicker1.TabIndex = 1;
             // 
             // reportsDataGrid
             // 
@@ -147,55 +178,13 @@
             this.qSold,
             this.qRemaining,
             this.tAmount});
-            this.reportsDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportsDataGrid.EnableHeadersVisualStyles = false;
-            this.reportsDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.reportsDataGrid.Location = new System.Drawing.Point(27, 87);
             this.reportsDataGrid.Name = "reportsDataGrid";
             this.reportsDataGrid.RowTemplate.Height = 25;
-            this.reportsDataGrid.Size = new System.Drawing.Size(1336, 428);
+            this.reportsDataGrid.Size = new System.Drawing.Size(1344, 455);
             this.reportsDataGrid.TabIndex = 0;
             this.reportsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.reportsDataGrid_CellContentClick);
-            // 
-            // reportsHeader
-            // 
-            this.reportsHeader.AutoSize = true;
-            this.reportsHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.reportsHeader.Location = new System.Drawing.Point(99, 9);
-            this.reportsHeader.Name = "reportsHeader";
-            this.reportsHeader.Size = new System.Drawing.Size(102, 27);
-            this.reportsHeader.TabIndex = 2;
-            this.reportsHeader.Text = "Reports";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(149, 23);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // rCategory
-            // 
-            this.rCategory.AutoSize = true;
-            this.rCategory.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rCategory.Location = new System.Drawing.Point(35, 37);
-            this.rCategory.Name = "rCategory";
-            this.rCategory.Size = new System.Drawing.Size(65, 17);
-            this.rCategory.TabIndex = 2;
-            this.rCategory.Text = "Category";
-            // 
-            // rGenerateButton
-            // 
-            this.rGenerateButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rGenerateButton.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rGenerateButton.Location = new System.Drawing.Point(985, 24);
-            this.rGenerateButton.Name = "rGenerateButton";
-            this.rGenerateButton.Size = new System.Drawing.Size(128, 38);
-            this.rGenerateButton.TabIndex = 5;
-            this.rGenerateButton.Text = "Generate Report";
-            this.rGenerateButton.UseVisualStyleBackColor = true;
-            this.rGenerateButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // pNumber
             // 
@@ -240,6 +229,59 @@
             this.tAmount.Name = "tAmount";
             this.tAmount.Width = 80;
             // 
+            // reportsHeader
+            // 
+            this.reportsHeader.AutoSize = true;
+            this.reportsHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.reportsHeader.Location = new System.Drawing.Point(99, 9);
+            this.reportsHeader.Name = "reportsHeader";
+            this.reportsHeader.Size = new System.Drawing.Size(102, 27);
+            this.reportsHeader.TabIndex = 2;
+            this.reportsHeader.Text = "Reports";
+            // 
+            // pp2
+            // 
+            this.pp2.BackColor = System.Drawing.Color.DarkGray;
+            this.pp2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pp2.Location = new System.Drawing.Point(1203, 559);
+            this.pp2.Name = "pp2";
+            this.pp2.Size = new System.Drawing.Size(36, 32);
+            this.pp2.TabIndex = 8;
+            this.pp2.Text = "2";
+            this.pp2.UseVisualStyleBackColor = false;
+            // 
+            // pp1
+            // 
+            this.pp1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pp1.Location = new System.Drawing.Point(1162, 559);
+            this.pp1.Name = "pp1";
+            this.pp1.Size = new System.Drawing.Size(36, 32);
+            this.pp1.TabIndex = 9;
+            this.pp1.Text = "1";
+            this.pp1.UseVisualStyleBackColor = true;
+            // 
+            // ppNext
+            // 
+            this.ppNext.AutoSize = true;
+            this.ppNext.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ppNext.ForeColor = System.Drawing.Color.Salmon;
+            this.ppNext.Location = new System.Drawing.Point(1245, 567);
+            this.ppNext.Name = "ppNext";
+            this.ppNext.Size = new System.Drawing.Size(39, 17);
+            this.ppNext.TabIndex = 6;
+            this.ppNext.Text = "Next";
+            // 
+            // ppPrevious
+            // 
+            this.ppPrevious.AutoSize = true;
+            this.ppPrevious.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ppPrevious.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ppPrevious.Location = new System.Drawing.Point(1092, 567);
+            this.ppPrevious.Name = "ppPrevious";
+            this.ppPrevious.Size = new System.Drawing.Size(64, 17);
+            this.ppPrevious.TabIndex = 7;
+            this.ppPrevious.Text = "Previous";
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -253,7 +295,6 @@
             this.Text = "Reports";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.reportsDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,7 +308,6 @@
         private Label label1;
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
-        private Panel panel2;
         private Button rGenerateButton;
         private ComboBox comboBox1;
         private TextBox searchBox;
@@ -281,5 +321,9 @@
         private DataGridViewTextBoxColumn qSold;
         private DataGridViewTextBoxColumn qRemaining;
         private DataGridViewTextBoxColumn tAmount;
+        private Button pp2;
+        private Button pp1;
+        private Label ppNext;
+        private Label ppPrevious;
     }
 }

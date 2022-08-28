@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Shoprite_Inventory_Management
 {
     public partial class User_Management : Form
+
     {
+      
         public User_Management()
         {
             InitializeComponent();
+        }
+
+        private void User_Management_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uUserButton_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

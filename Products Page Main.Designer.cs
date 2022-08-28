@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Products_Page));
             this.ppPanel = new System.Windows.Forms.Panel();
-            this.pp2 = new System.Windows.Forms.Button();
-            this.pp1 = new System.Windows.Forms.Button();
-            this.ppNext = new System.Windows.Forms.Label();
-            this.ppPrevious = new System.Windows.Forms.Label();
             this.ppProductButton = new System.Windows.Forms.Button();
             this.ppDataView = new System.Windows.Forms.DataGridView();
-            this.ppHeader = new System.Windows.Forms.Label();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productImage = new System.Windows.Forms.DataGridViewImageColumn();
@@ -47,6 +42,11 @@
             this.ppPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.ppDelete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ppHeader = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.ppPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppDataView)).BeginInit();
             this.SuspendLayout();
@@ -54,10 +54,10 @@
             // ppPanel
             // 
             this.ppPanel.BackColor = System.Drawing.Color.White;
-            this.ppPanel.Controls.Add(this.pp2);
-            this.ppPanel.Controls.Add(this.pp1);
-            this.ppPanel.Controls.Add(this.ppNext);
-            this.ppPanel.Controls.Add(this.ppPrevious);
+            this.ppPanel.Controls.Add(this.button1);
+            this.ppPanel.Controls.Add(this.button2);
+            this.ppPanel.Controls.Add(this.label1);
+            this.ppPanel.Controls.Add(this.label2);
             this.ppPanel.Controls.Add(this.ppProductButton);
             this.ppPanel.Controls.Add(this.ppDataView);
             this.ppPanel.Location = new System.Drawing.Point(30, 78);
@@ -65,68 +65,29 @@
             this.ppPanel.Size = new System.Drawing.Size(1311, 547);
             this.ppPanel.TabIndex = 0;
             // 
-            // pp2
-            // 
-            this.pp2.BackColor = System.Drawing.Color.DarkGray;
-            this.pp2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pp2.Location = new System.Drawing.Point(1124, 506);
-            this.pp2.Name = "pp2";
-            this.pp2.Size = new System.Drawing.Size(36, 32);
-            this.pp2.TabIndex = 3;
-            this.pp2.Text = "2";
-            this.pp2.UseVisualStyleBackColor = false;
-            // 
-            // pp1
-            // 
-            this.pp1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pp1.Location = new System.Drawing.Point(1083, 506);
-            this.pp1.Name = "pp1";
-            this.pp1.Size = new System.Drawing.Size(36, 32);
-            this.pp1.TabIndex = 3;
-            this.pp1.Text = "1";
-            this.pp1.UseVisualStyleBackColor = true;
-            // 
-            // ppNext
-            // 
-            this.ppNext.AutoSize = true;
-            this.ppNext.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ppNext.Location = new System.Drawing.Point(1166, 514);
-            this.ppNext.Name = "ppNext";
-            this.ppNext.Size = new System.Drawing.Size(39, 17);
-            this.ppNext.TabIndex = 1;
-            this.ppNext.Text = "Next";
-            // 
-            // ppPrevious
-            // 
-            this.ppPrevious.AutoSize = true;
-            this.ppPrevious.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ppPrevious.Location = new System.Drawing.Point(1013, 514);
-            this.ppPrevious.Name = "ppPrevious";
-            this.ppPrevious.Size = new System.Drawing.Size(64, 17);
-            this.ppPrevious.TabIndex = 1;
-            this.ppPrevious.Text = "Previous";
-            // 
             // ppProductButton
             // 
+            this.ppProductButton.BackColor = System.Drawing.Color.Salmon;
             this.ppProductButton.Font = new System.Drawing.Font("Georgia", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ppProductButton.ForeColor = System.Drawing.Color.White;
             this.ppProductButton.Location = new System.Drawing.Point(1104, 14);
             this.ppProductButton.Name = "ppProductButton";
             this.ppProductButton.Size = new System.Drawing.Size(146, 41);
             this.ppProductButton.TabIndex = 2;
             this.ppProductButton.Text = "Create Product";
-            this.ppProductButton.UseVisualStyleBackColor = true;
+            this.ppProductButton.UseVisualStyleBackColor = false;
             // 
             // ppDataView
             // 
             this.ppDataView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ppDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ppDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ppDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ppDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
@@ -139,22 +100,11 @@
             this.ppEdit,
             this.ppDelete});
             this.ppDataView.EnableHeadersVisualStyles = false;
-            this.ppDataView.Location = new System.Drawing.Point(15, 61);
+            this.ppDataView.Location = new System.Drawing.Point(15, 67);
             this.ppDataView.Name = "ppDataView";
             this.ppDataView.RowTemplate.Height = 25;
             this.ppDataView.Size = new System.Drawing.Size(1278, 432);
             this.ppDataView.TabIndex = 1;
-            // 
-            // ppHeader
-            // 
-            this.ppHeader.AutoSize = true;
-            this.ppHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ppHeader.Location = new System.Drawing.Point(45, 24);
-            this.ppHeader.Name = "ppHeader";
-            this.ppHeader.Size = new System.Drawing.Size(209, 27);
-            this.ppHeader.TabIndex = 1;
-            this.ppHeader.Text = "Manage Products";
-            this.ppHeader.Click += new System.EventHandler(this.ppHeader_Click);
             // 
             // Number
             // 
@@ -214,6 +164,60 @@
             this.ppDelete.Name = "ppDelete";
             this.ppDelete.Width = 40;
             // 
+            // ppHeader
+            // 
+            this.ppHeader.AutoSize = true;
+            this.ppHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ppHeader.Location = new System.Drawing.Point(68, 25);
+            this.ppHeader.Name = "ppHeader";
+            this.ppHeader.Size = new System.Drawing.Size(209, 27);
+            this.ppHeader.TabIndex = 1;
+            this.ppHeader.Text = "Manage Products";
+            this.ppHeader.Click += new System.EventHandler(this.ppHeader_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkGray;
+            this.button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(1131, 505);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 32);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "2";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(1090, 505);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 32);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "1";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Salmon;
+            this.label1.Location = new System.Drawing.Point(1173, 513);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Next";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label2.Location = new System.Drawing.Point(1020, 513);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Previous";
+            // 
             // Products_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -236,12 +240,8 @@
 
         private Panel ppPanel;
         private DataGridView ppDataView;
-        private Label ppNext;
-        private Label ppPrevious;
         private Button ppProductButton;
         private Label ppHeader;
-        private Button pp2;
-        private Button pp1;
         private DataGridViewTextBoxColumn Number;
         private DataGridViewTextBoxColumn ppCategory;
         private DataGridViewImageColumn productImage;
@@ -251,5 +251,9 @@
         private DataGridViewTextBoxColumn ppPrice;
         private DataGridViewImageColumn ppEdit;
         private DataGridViewImageColumn ppDelete;
+        private Button button1;
+        private Button button2;
+        private Label label1;
+        private Label label2;
     }
 }
