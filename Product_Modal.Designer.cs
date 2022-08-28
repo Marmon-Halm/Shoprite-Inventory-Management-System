@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.categoryBox = new System.Windows.Forms.ComboBox();
+            this.productName = new System.Windows.Forms.TextBox();
+            this.price = new System.Windows.Forms.TextBox();
+            this.productDescription = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pmProductName = new System.Windows.Forms.Label();
             this.pmProductDescription = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PManageCloseButton = new System.Windows.Forms.PictureBox();
             this.pmQuantity = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.quantity = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.PManageCloseButton = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PManageCloseButton)).BeginInit();
             this.SuspendLayout();
@@ -57,39 +57,44 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add A New Product";
             // 
-            // comboBox1
+            // categoryBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(59, 142);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(245, 28);
-            this.comboBox1.TabIndex = 1;
+            this.categoryBox.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.categoryBox.FormattingEnabled = true;
+            this.categoryBox.Items.AddRange(new object[] {
+            "Add A Product Category"});
+            this.categoryBox.Location = new System.Drawing.Point(59, 142);
+            this.categoryBox.Name = "categoryBox";
+            this.categoryBox.Size = new System.Drawing.Size(245, 28);
+            this.categoryBox.TabIndex = 1;
+            this.categoryBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // productName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(375, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 28);
-            this.textBox1.TabIndex = 2;
+            this.productName.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.productName.Location = new System.Drawing.Point(375, 141);
+            this.productName.Name = "productName";
+            this.productName.Size = new System.Drawing.Size(245, 28);
+            this.productName.TabIndex = 2;
+            this.productName.TextChanged += new System.EventHandler(this.productName_TextChanged);
             // 
-            // textBox2
+            // price
             // 
-            this.textBox2.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(375, 248);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 28);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.price.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.price.Location = new System.Drawing.Point(375, 248);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(245, 28);
+            this.price.TabIndex = 2;
+            this.price.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // productDescription
             // 
-            this.textBox3.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(59, 248);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 28);
-            this.textBox3.TabIndex = 2;
+            this.productDescription.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.productDescription.Location = new System.Drawing.Point(59, 248);
+            this.productDescription.Name = "productDescription";
+            this.productDescription.Size = new System.Drawing.Size(245, 28);
+            this.productDescription.TabIndex = 2;
+            this.productDescription.TextChanged += new System.EventHandler(this.productDescription_TextChanged);
             // 
             // label2
             // 
@@ -143,6 +148,18 @@
             this.panel1.Size = new System.Drawing.Size(692, 60);
             this.panel1.TabIndex = 3;
             // 
+            // PManageCloseButton
+            // 
+            this.PManageCloseButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PManageCloseButton.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
+            this.PManageCloseButton.Location = new System.Drawing.Point(616, 12);
+            this.PManageCloseButton.Name = "PManageCloseButton";
+            this.PManageCloseButton.Size = new System.Drawing.Size(42, 34);
+            this.PManageCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PManageCloseButton.TabIndex = 2;
+            this.PManageCloseButton.TabStop = false;
+            this.PManageCloseButton.Click += new System.EventHandler(this.PManageCloseButton_Click);
+            // 
             // pmQuantity
             // 
             this.pmQuantity.AutoSize = true;
@@ -153,61 +170,52 @@
             this.pmQuantity.TabIndex = 0;
             this.pmQuantity.Text = "Quantity";
             // 
-            // textBox4
+            // quantity
             // 
-            this.textBox4.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(59, 358);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(245, 28);
-            this.textBox4.TabIndex = 2;
+            this.quantity.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.quantity.Location = new System.Drawing.Point(59, 358);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(245, 28);
+            this.quantity.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
             this.button1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(566, 449);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(566, 417);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 33);
             this.button1.TabIndex = 18;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(464, 449);
+            this.button2.Location = new System.Drawing.Point(464, 417);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 33);
             this.button2.TabIndex = 19;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // PManageCloseButton
-            // 
-            this.PManageCloseButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PManageCloseButton.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
-            this.PManageCloseButton.Location = new System.Drawing.Point(616, 12);
-            this.PManageCloseButton.Name = "PManageCloseButton";
-            this.PManageCloseButton.Size = new System.Drawing.Size(42, 37);
-            this.PManageCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PManageCloseButton.TabIndex = 2;
-            this.PManageCloseButton.TabStop = false;
-            this.PManageCloseButton.Click += new System.EventHandler(this.PManageCloseButton_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Product_Modal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 494);
+            this.ClientSize = new System.Drawing.Size(692, 461);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.quantity);
+            this.Controls.Add(this.productDescription);
+            this.Controls.Add(this.price);
+            this.Controls.Add(this.productName);
+            this.Controls.Add(this.categoryBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pmQuantity);
             this.Controls.Add(this.pmProductDescription);
@@ -215,6 +223,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Product_Modal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product_Modal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -227,19 +236,19 @@
         #endregion
 
         private Label label1;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Label label2;
-        private Label pmProductName;
-        private Label pmProductDescription;
-        private Label label6;
         private Panel panel1;
-        private Label pmQuantity;
-        private TextBox textBox4;
         private Button button1;
         private Button button2;
         private PictureBox PManageCloseButton;
+        public ComboBox categoryBox;
+        public TextBox productDescription;
+        public TextBox productName;
+        public TextBox price;
+        public Label label2;
+        public Label pmProductName;
+        public Label pmProductDescription;
+        public Label label6;
+        public Label pmQuantity;
+        public TextBox quantity;
     }
 }

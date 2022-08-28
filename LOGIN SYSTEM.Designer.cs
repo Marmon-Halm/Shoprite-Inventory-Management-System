@@ -76,6 +76,7 @@
             this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // panel1
             // 
@@ -100,6 +101,7 @@
             // radioAdmin
             // 
             this.radioAdmin.AutoSize = true;
+            this.radioAdmin.Checked = true;
             this.radioAdmin.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioAdmin.Location = new System.Drawing.Point(1178, 193);
             this.radioAdmin.Name = "radioAdmin";
@@ -108,6 +110,7 @@
             this.radioAdmin.TabStop = true;
             this.radioAdmin.Text = "Admin";
             this.radioAdmin.UseVisualStyleBackColor = true;
+            this.radioAdmin.CheckedChanged += new System.EventHandler(this.radioAdmin_CheckedChanged);
             // 
             // radioUser
             // 
@@ -117,7 +120,6 @@
             this.radioUser.Name = "radioUser";
             this.radioUser.Size = new System.Drawing.Size(62, 24);
             this.radioUser.TabIndex = 5;
-            this.radioUser.TabStop = true;
             this.radioUser.Text = "User";
             this.radioUser.UseVisualStyleBackColor = true;
             // 
@@ -199,6 +201,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "LOGIN_SYSTEM";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN_SYSTEM";
             this.Load += new System.EventHandler(this.LOGIN_SYSTEM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

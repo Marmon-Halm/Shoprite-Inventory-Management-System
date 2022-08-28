@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.salesLogout = new System.Windows.Forms.LinkLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.salesLogout = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.salesSearchBox = new System.Windows.Forms.TextBox();
@@ -53,6 +54,7 @@
             this.salesProductName = new System.Windows.Forms.Label();
             this.salesProductID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,13 +66,40 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.salesLogout);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1563, 62);
+            this.panel1.Size = new System.Drawing.Size(1563, 77);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox3.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_480px;
+            this.pictureBox3.Location = new System.Drawing.Point(1487, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // salesLogout
+            // 
+            this.salesLogout.AutoSize = true;
+            this.salesLogout.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.salesLogout.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.salesLogout.LinkColor = System.Drawing.SystemColors.ControlText;
+            this.salesLogout.Location = new System.Drawing.Point(1357, 35);
+            this.salesLogout.Name = "salesLogout";
+            this.salesLogout.Size = new System.Drawing.Size(69, 23);
+            this.salesLogout.TabIndex = 2;
+            this.salesLogout.TabStop = true;
+            this.salesLogout.Text = "Logout";
+            this.salesLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.salesLogout_LinkClicked);
             // 
             // pictureBox2
             // 
@@ -79,19 +108,9 @@
             this.pictureBox2.ImageLocation = "";
             this.pictureBox2.Location = new System.Drawing.Point(153, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(249, 62);
+            this.pictureBox2.Size = new System.Drawing.Size(256, 77);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // salesLogout
-            // 
-            this.salesLogout.AutoSize = true;
-            this.salesLogout.Font = new System.Drawing.Font("Georgia", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.salesLogout.Location = new System.Drawing.Point(1301, 21);
-            this.salesLogout.Name = "salesLogout";
-            this.salesLogout.Size = new System.Drawing.Size(74, 21);
-            this.salesLogout.TabIndex = 0;
-            this.salesLogout.Text = "Log Out";
             // 
             // panel2
             // 
@@ -99,9 +118,9 @@
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.salesSearchBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 62);
+            this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(361, 648);
+            this.panel2.Size = new System.Drawing.Size(361, 633);
             this.panel2.TabIndex = 0;
             // 
             // panel5
@@ -132,16 +151,16 @@
             this.panel3.Controls.Add(this.salesClear);
             this.panel3.Controls.Add(this.salesSubmit);
             this.panel3.Controls.Add(this.salesCartPanel);
-            this.panel3.Location = new System.Drawing.Point(415, 62);
+            this.panel3.Location = new System.Drawing.Point(415, 77);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1148, 648);
+            this.panel3.Size = new System.Drawing.Size(1148, 633);
             this.panel3.TabIndex = 0;
             // 
             // totalAmount
             // 
             this.totalAmount.BackColor = System.Drawing.Color.WhiteSmoke;
             this.totalAmount.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.totalAmount.Location = new System.Drawing.Point(407, 602);
+            this.totalAmount.Location = new System.Drawing.Point(409, 592);
             this.totalAmount.Name = "totalAmount";
             this.totalAmount.Size = new System.Drawing.Size(88, 25);
             this.totalAmount.TabIndex = 2;
@@ -150,7 +169,7 @@
             // 
             this.salesTotalAmount.AutoSize = true;
             this.salesTotalAmount.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.salesTotalAmount.Location = new System.Drawing.Point(295, 605);
+            this.salesTotalAmount.Location = new System.Drawing.Point(297, 595);
             this.salesTotalAmount.Name = "salesTotalAmount";
             this.salesTotalAmount.Size = new System.Drawing.Size(106, 18);
             this.salesTotalAmount.TabIndex = 0;
@@ -160,7 +179,7 @@
             // 
             this.totalItems.BackColor = System.Drawing.Color.WhiteSmoke;
             this.totalItems.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.totalItems.Location = new System.Drawing.Point(184, 602);
+            this.totalItems.Location = new System.Drawing.Point(186, 592);
             this.totalItems.Name = "totalItems";
             this.totalItems.Size = new System.Drawing.Size(70, 25);
             this.totalItems.TabIndex = 2;
@@ -169,7 +188,7 @@
             // 
             this.salesTotalNo.AutoSize = true;
             this.salesTotalNo.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.salesTotalNo.Location = new System.Drawing.Point(38, 605);
+            this.salesTotalNo.Location = new System.Drawing.Point(40, 595);
             this.salesTotalNo.Name = "salesTotalNo";
             this.salesTotalNo.Size = new System.Drawing.Size(140, 18);
             this.salesTotalNo.TabIndex = 0;
@@ -180,7 +199,7 @@
             this.salesClear.BackColor = System.Drawing.Color.Gray;
             this.salesClear.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.salesClear.ForeColor = System.Drawing.Color.White;
-            this.salesClear.Location = new System.Drawing.Point(975, 600);
+            this.salesClear.Location = new System.Drawing.Point(977, 590);
             this.salesClear.Name = "salesClear";
             this.salesClear.Size = new System.Drawing.Size(142, 36);
             this.salesClear.TabIndex = 1;
@@ -192,7 +211,7 @@
             this.salesSubmit.BackColor = System.Drawing.Color.Salmon;
             this.salesSubmit.Font = new System.Drawing.Font("Georgia", 12.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.salesSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.salesSubmit.Location = new System.Drawing.Point(801, 600);
+            this.salesSubmit.Location = new System.Drawing.Point(803, 590);
             this.salesSubmit.Name = "salesSubmit";
             this.salesSubmit.Size = new System.Drawing.Size(142, 36);
             this.salesSubmit.TabIndex = 1;
@@ -205,7 +224,7 @@
             this.salesCartPanel.Controls.Add(this.panel4);
             this.salesCartPanel.Location = new System.Drawing.Point(38, 30);
             this.salesCartPanel.Name = "salesCartPanel";
-            this.salesCartPanel.Size = new System.Drawing.Size(1079, 553);
+            this.salesCartPanel.Size = new System.Drawing.Size(1079, 544);
             this.salesCartPanel.TabIndex = 0;
             this.salesCartPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.salesCartPanel_Paint);
             // 
@@ -318,10 +337,12 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sales_Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales_Main";
             this.Load += new System.EventHandler(this.Sales_Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -341,7 +362,6 @@
         private Panel panel2;
         private Panel panel3;
         private Panel salesCartPanel;
-        private Label salesLogout;
         private Label salesProductID;
         private Panel panel5;
         private TextBox salesSearchBox;
@@ -360,5 +380,7 @@
         private Button salesDelete;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private LinkLabel salesLogout;
+        private PictureBox pictureBox3;
     }
 }

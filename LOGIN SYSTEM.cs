@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shoprite_Inventory_Management.ATTENDANT;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,7 @@ namespace Shoprite_Inventory_Management
 {
     public partial class LOGIN_SYSTEM : Form
     {
-        public LOGIN_SYSTEM()
-        {
-            InitializeComponent();
-            //OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Inventory Database.mdf")
-        }
+        public LOGIN_SYSTEM() => InitializeComponent();//OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=Inventory Database.mdf")
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -67,6 +64,30 @@ namespace Shoprite_Inventory_Management
             {
                 Application.Exit();
             }
+        }
+        
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            REGISTER_SYSTEM ls = new REGISTER_SYSTEM();
+            Sales_Main sm = new Sales_Main();
+
+            if (radioAdmin.Checked == false)
+            {   
+                 this.Hide();
+                 sm.Show();
+            }
+               
+            else
+            {
+                this.Hide();
+                ls.Show();
+            }
+               
+        }
+
+        private void radioAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

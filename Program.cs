@@ -11,7 +11,7 @@ namespace Shoprite_Inventory_Management
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new User_Management_Modal());
+            Application.Run(new LOGIN_SYSTEM());
         }
     }
 }

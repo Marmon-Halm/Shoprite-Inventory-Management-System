@@ -12,10 +12,7 @@ namespace Shoprite_Inventory_Management.ATTENDANT
 {
     public partial class Sales_Main : Form
     {
-        public Sales_Main()
-        {
-            InitializeComponent();
-        }
+        public Sales_Main() => InitializeComponent();
 
         private void Sales_Main_Load(object sender, EventArgs e)
         {
@@ -25,6 +22,18 @@ namespace Shoprite_Inventory_Management.ATTENDANT
         private void salesCartPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void salesLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LOGIN_SYSTEM lg = new LOGIN_SYSTEM();
+            this.Hide();
+            lg.Show();  
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+           Application.Exit();
         }
     }
 }

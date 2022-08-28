@@ -73,6 +73,16 @@ namespace Shoprite_Inventory_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_480px {
+            get {
+                object obj = ResourceManager.GetObject("close_480px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_500px {
             get {
                 object obj = ResourceManager.GetObject("close_500px", resourceCulture);

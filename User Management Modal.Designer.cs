@@ -39,12 +39,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxContact = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.userGender = new System.Windows.Forms.ComboBox();
-            this.Gender = new System.Windows.Forms.Label();
-            this.userAdd = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userManagementCloseButton)).BeginInit();
             this.SuspendLayout();
@@ -89,6 +87,7 @@
             this.textBoxPOR.Name = "textBoxPOR";
             this.textBoxPOR.Size = new System.Drawing.Size(245, 28);
             this.textBoxPOR.TabIndex = 12;
+            this.textBoxPOR.TextChanged += new System.EventHandler(this.textBoxPOR_TextChanged);
             // 
             // textBoxFullName
             // 
@@ -97,6 +96,7 @@
             this.textBoxFullName.Name = "textBoxFullName";
             this.textBoxFullName.Size = new System.Drawing.Size(245, 28);
             this.textBoxFullName.TabIndex = 13;
+            this.textBoxFullName.TextChanged += new System.EventHandler(this.textBoxFullName_TextChanged);
             // 
             // label6
             // 
@@ -133,7 +133,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(60, 317);
+            this.label7.Location = new System.Drawing.Point(378, 219);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 21);
             this.label7.TabIndex = 9;
@@ -143,10 +143,11 @@
             // textBoxContact
             // 
             this.textBoxContact.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxContact.Location = new System.Drawing.Point(57, 351);
+            this.textBoxContact.Location = new System.Drawing.Point(375, 253);
             this.textBoxContact.Name = "textBoxContact";
             this.textBoxContact.Size = new System.Drawing.Size(245, 28);
             this.textBoxContact.TabIndex = 14;
+            this.textBoxContact.TextChanged += new System.EventHandler(this.textBoxContact_TextChanged);
             // 
             // textBoxUsername
             // 
@@ -157,23 +158,11 @@
             this.textBoxUsername.TabIndex = 13;
             this.textBoxUsername.TextChanged += new System.EventHandler(this.textBoxUsername_TextChanged);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(575, 458);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 33);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(378, 317);
+            this.label8.Location = new System.Drawing.Point(59, 325);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 21);
             this.label8.TabIndex = 9;
@@ -182,56 +171,44 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPassword.Location = new System.Drawing.Point(375, 351);
+            this.textBoxPassword.Location = new System.Drawing.Point(56, 359);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(245, 28);
             this.textBoxPassword.TabIndex = 14;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
-            // userGender
+            // button1
             // 
-            this.userGender.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.userGender.FormattingEnabled = true;
-            this.userGender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.userGender.Location = new System.Drawing.Point(374, 252);
-            this.userGender.Name = "userGender";
-            this.userGender.Size = new System.Drawing.Size(245, 29);
-            this.userGender.TabIndex = 21;
-            this.userGender.SelectedIndexChanged += new System.EventHandler(this.userGender_SelectedIndexChanged);
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(575, 404);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 33);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // Gender
+            // button2
             // 
-            this.Gender.AutoSize = true;
-            this.Gender.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Gender.Location = new System.Drawing.Point(374, 224);
-            this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(69, 21);
-            this.Gender.TabIndex = 22;
-            this.Gender.Text = "Gender";
-            this.Gender.Click += new System.EventHandler(this.Gender_Click);
-            // 
-            // userAdd
-            // 
-            this.userAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.userAdd.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.userAdd.Location = new System.Drawing.Point(477, 456);
-            this.userAdd.Name = "userAdd";
-            this.userAdd.Size = new System.Drawing.Size(92, 35);
-            this.userAdd.TabIndex = 23;
-            this.userAdd.Text = "Add";
-            this.userAdd.UseVisualStyleBackColor = false;
-            this.userAdd.Click += new System.EventHandler(this.userAdd_Click);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(473, 404);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 33);
+            this.button2.TabIndex = 25;
+            this.button2.Text = "Create";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // User_Management_Modal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 500);
-            this.Controls.Add(this.userAdd);
-            this.Controls.Add(this.Gender);
-            this.Controls.Add(this.userGender);
+            this.ClientSize = new System.Drawing.Size(692, 446);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxPOR);
             this.Controls.Add(this.textBoxUsername);
@@ -245,6 +222,7 @@
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "User_Management_Modal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User_Management_Modal";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -259,10 +237,8 @@
         private Label label1;
         private Panel panel1;
         private Label username;
-        private Button button1;
         private Label label8;
         private PictureBox userManagementCloseButton;
-        private Label Gender;
         public TextBox textBoxPOR;
         public TextBox textBoxFullName;
         public Label label6;
@@ -271,7 +247,7 @@
         public TextBox textBoxContact;
         public TextBox textBoxUsername;
         public TextBox textBoxPassword;
-        public ComboBox userGender;
-        public Button userAdd;
+        private Button button1;
+        private Button button2;
     }
 }
