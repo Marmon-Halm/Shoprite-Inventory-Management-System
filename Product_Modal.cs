@@ -16,7 +16,7 @@ namespace Shoprite_Inventory_Management
     {
 
     
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\micha\OneDrive\Documents\Inventory Database.mdf"";Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\micha\OneDrive\Documents\InventoryDB.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cm = new SqlCommand();
     public Product_Modal() => InitializeComponent();
 
@@ -27,7 +27,7 @@ namespace Shoprite_Inventory_Management
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+  
         }
 
         private void PManageCloseButton_Click(object sender, EventArgs e)
@@ -50,22 +50,23 @@ namespace Shoprite_Inventory_Management
         {
             try
             {
-                if (MessageBox.Show("Confirm To Add Product", "Add New Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("Confirm To Add Product", "Add New Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    cm = new SqlCommand("INSERT INTO tbProduct_Table(Category,Product_Name,Product_Description,Price,Quantity)VALUES(@Category,@Product_Name,@Product_Description,@Price,@Quantity)", con);
-                    cm.Parameters.AddWithValue("@Category", categoryBox.Text);
-                    cm.Parameters.AddWithValue("@Product_Name", productName.Text);
-                    cm.Parameters.AddWithValue("@Product_Description", productDescription.Text);
-                    cm.Parameters.AddWithValue("@Price", price.Text);
-                    cm.Parameters.AddWithValue("@Quantity", quantity.Text);
+                    cm = new SqlCommand("INSERT INTO tbProduct_Table(category,product_name,product_description,price,quantity)VALUES(@category,@product_name,@product_description,@price,@quantity)", con);
+                    cm.Parameters.AddWithValue("@category", categoryBox.Text);
+                    cm.Parameters.AddWithValue("@product_name", productName.Text);
+                    cm.Parameters.AddWithValue("@product_description", productDescription.Text);
+                    cm.Parameters.AddWithValue("@price", price.Text);
+                    cm.Parameters.AddWithValue("@quantity", quantity.Text);
 
                     con.Open();
-                    cm.ExecuteNonQuery();
+                    cm.ExecuteNonQuery();   
                     con.Close();
-
                     MessageBox.Show("Product Added Successfully!");
 
+                    Clear();
+                 
                 }
 
             }
@@ -73,6 +74,15 @@ namespace Shoprite_Inventory_Management
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void Clear()
+        {
+            productName.Clear();
+            productDescription.Clear();
+            price.Clear();
+            quantity.Clear();
 
         }
 

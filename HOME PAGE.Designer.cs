@@ -46,7 +46,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.ppDataView = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -251,13 +250,12 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ppDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ppDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ppDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Number,
             this.ppCategory,
             this.ppProductName,
             this.ppProductDescription,
@@ -267,16 +265,11 @@
             this.ppDelete});
             this.ppDataView.EnableHeadersVisualStyles = false;
             this.ppDataView.Location = new System.Drawing.Point(16, 89);
+            this.ppDataView.MultiSelect = false;
             this.ppDataView.Name = "ppDataView";
             this.ppDataView.RowTemplate.Height = 25;
             this.ppDataView.Size = new System.Drawing.Size(1273, 536);
             this.ppDataView.TabIndex = 1;
-            // 
-            // Number
-            // 
-            this.Number.HeaderText = "No.";
-            this.Number.Name = "Number";
-            this.Number.Width = 50;
             // 
             // ppCategory
             // 
@@ -409,8 +402,6 @@
         private Button button5;
         private Label label4;
         private Label label5;
-        private DataGridView ppDataView;
-        private DataGridViewTextBoxColumn Number;
         private DataGridViewTextBoxColumn ppCategory;
         private DataGridViewTextBoxColumn ppProductName;
         private DataGridViewTextBoxColumn ppProductDescription;
@@ -418,5 +409,6 @@
         private DataGridViewTextBoxColumn ppQuantity;
         private DataGridViewImageColumn ppEdit;
         private DataGridViewImageColumn ppDelete;
+        public DataGridView ppDataView;
     }
 }

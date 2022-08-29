@@ -14,7 +14,7 @@ namespace Shoprite_Inventory_Management
     public partial class UserModal : Form
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\micha\OneDrive\Documents\Inventory Database.mdf"";Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\micha\OneDrive\Documents\InventoryDB.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cm = new SqlCommand();
         public UserModal()
 
@@ -31,15 +31,15 @@ namespace Shoprite_Inventory_Management
         {
             try
             {
-                if (MessageBox.Show("Confirm to create user", "Create User", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                if (MessageBox.Show("Confirm to create user", "Create User", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    cm = new SqlCommand("INSERT INTO tbUser_Table(Username,fullName,placeOfResidence,Contact,Password)VALUES(@Username,@fullName,@placeOf_Residence,@Contact,@Password)", con);
-                    cm.Parameters.AddWithValue("@Username", usernameBox.Text);
+                    cm = new SqlCommand("INSERT INTO tbUser(username,fullName,placeOfResidence,contact,password)VALUES(@username,@fullName,@placeOfResidence,@contact,@password)", con);
+                    cm.Parameters.AddWithValue("@username", usernameBox.Text);
                     cm.Parameters.AddWithValue("@fullName", FullNameBox.Text);
                     cm.Parameters.AddWithValue("@placeOfResidence", PORBox.Text);
-                    cm.Parameters.AddWithValue("@Contact", ContactBox.Text);
-                    cm.Parameters.AddWithValue("@Password", textBox1.Text);
+                    cm.Parameters.AddWithValue("@contact", ContactBox.Text);
+                    cm.Parameters.AddWithValue("@password", textBox1.Text);
 
                     con.Open();
                     cm.ExecuteNonQuery();

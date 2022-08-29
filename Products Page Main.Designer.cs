@@ -151,6 +151,7 @@
             this.ppDataView.RowTemplate.Height = 25;
             this.ppDataView.Size = new System.Drawing.Size(1265, 438);
             this.ppDataView.TabIndex = 1;
+            this.ppDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ppDataView_CellContentClick);
             // 
             // Number
             // 
