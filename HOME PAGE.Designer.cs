@@ -46,16 +46,17 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.ppDataView = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ppHeader = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ppEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ppDelete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ppHeader = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -256,13 +257,14 @@
             this.ppDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ppDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ppDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.number,
             this.ppCategory,
             this.ppProductName,
             this.ppProductDescription,
             this.ppPrice,
             this.ppQuantity,
-            this.ppEdit,
-            this.ppDelete});
+            this.Edit,
+            this.Delete});
             this.ppDataView.EnableHeadersVisualStyles = false;
             this.ppDataView.Location = new System.Drawing.Point(16, 89);
             this.ppDataView.MultiSelect = false;
@@ -270,55 +272,7 @@
             this.ppDataView.RowTemplate.Height = 25;
             this.ppDataView.Size = new System.Drawing.Size(1273, 536);
             this.ppDataView.TabIndex = 1;
-            // 
-            // ppCategory
-            // 
-            this.ppCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ppCategory.FillWeight = 40F;
-            this.ppCategory.HeaderText = "Category";
-            this.ppCategory.Name = "ppCategory";
-            // 
-            // ppProductName
-            // 
-            this.ppProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ppProductName.FillWeight = 50F;
-            this.ppProductName.HeaderText = "Product Name";
-            this.ppProductName.Name = "ppProductName";
-            // 
-            // ppProductDescription
-            // 
-            this.ppProductDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ppProductDescription.FillWeight = 70F;
-            this.ppProductDescription.HeaderText = "Product Description";
-            this.ppProductDescription.Name = "ppProductDescription";
-            // 
-            // ppPrice
-            // 
-            this.ppPrice.HeaderText = "Price";
-            this.ppPrice.Name = "ppPrice";
-            this.ppPrice.Width = 110;
-            // 
-            // ppQuantity
-            // 
-            this.ppQuantity.HeaderText = "Quantity";
-            this.ppQuantity.Name = "ppQuantity";
-            this.ppQuantity.Width = 90;
-            // 
-            // ppEdit
-            // 
-            this.ppEdit.HeaderText = "";
-            this.ppEdit.Image = ((System.Drawing.Image)(resources.GetObject("ppEdit.Image")));
-            this.ppEdit.Name = "ppEdit";
-            this.ppEdit.ToolTipText = "Edit Product";
-            this.ppEdit.Width = 40;
-            // 
-            // ppDelete
-            // 
-            this.ppDelete.HeaderText = "";
-            this.ppDelete.Image = ((System.Drawing.Image)(resources.GetObject("ppDelete.Image")));
-            this.ppDelete.Name = "ppDelete";
-            this.ppDelete.ToolTipText = "Edit Product";
-            this.ppDelete.Width = 40;
+            this.ppDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ppDataView_CellContentClick);
             // 
             // label4
             // 
@@ -351,6 +305,61 @@
             this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Previous";
+            // 
+            // number
+            // 
+            this.number.HeaderText = "No.";
+            this.number.Name = "number";
+            this.number.Width = 50;
+            // 
+            // ppCategory
+            // 
+            this.ppCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ppCategory.FillWeight = 40F;
+            this.ppCategory.HeaderText = "Category";
+            this.ppCategory.Name = "ppCategory";
+            // 
+            // ppProductName
+            // 
+            this.ppProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ppProductName.FillWeight = 50F;
+            this.ppProductName.HeaderText = "Product Name";
+            this.ppProductName.Name = "ppProductName";
+            // 
+            // ppProductDescription
+            // 
+            this.ppProductDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ppProductDescription.FillWeight = 70F;
+            this.ppProductDescription.HeaderText = "Product Description";
+            this.ppProductDescription.Name = "ppProductDescription";
+            // 
+            // ppPrice
+            // 
+            this.ppPrice.HeaderText = "Price";
+            this.ppPrice.Name = "ppPrice";
+            this.ppPrice.Width = 79;
+            // 
+            // ppQuantity
+            // 
+            this.ppQuantity.HeaderText = "Quantity";
+            this.ppQuantity.Name = "ppQuantity";
+            this.ppQuantity.Width = 110;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.Name = "Edit";
+            this.Edit.ToolTipText = "Edit Product";
+            this.Edit.Width = 40;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Name = "Delete";
+            this.Delete.ToolTipText = "Edit Product";
+            this.Delete.Width = 40;
             // 
             // REGISTER_SYSTEM
             // 
@@ -402,13 +411,14 @@
         private Button button5;
         private Label label4;
         private Label label5;
+        public DataGridView ppDataView;
+        private DataGridViewTextBoxColumn number;
         private DataGridViewTextBoxColumn ppCategory;
         private DataGridViewTextBoxColumn ppProductName;
         private DataGridViewTextBoxColumn ppProductDescription;
         private DataGridViewTextBoxColumn ppPrice;
         private DataGridViewTextBoxColumn ppQuantity;
-        private DataGridViewImageColumn ppEdit;
-        private DataGridViewImageColumn ppDelete;
-        public DataGridView ppDataView;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
     }
 }

@@ -20,12 +20,13 @@ namespace Shoprite_Inventory_Management
         private void PCatCloseButton_Click(object sender, EventArgs e)
         {
            
-                this.Hide();
+                this.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -37,16 +38,17 @@ namespace Shoprite_Inventory_Management
         {
             try
             {
-                if (MessageBox.Show("Confirm To Add Category", "Add New Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Confirm To Add Product Category", "Add Product Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
                     cm = new SqlCommand("INSERT INTO tbCategory_Table(productCategoryName)VALUES(@productCategoryName)", con);
-                    cm.Parameters.AddWithValue("@productCategoryName", textBox1.Text);
+                    cm.Parameters.AddWithValue("@productCategoryName", categoryNameBox.Text);
 
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Category Added Successfully!");
+                    MessageBox.Show("Product Category Added Successfully!");
+                    clear();
 
 
                 }
@@ -62,5 +64,37 @@ namespace Shoprite_Inventory_Management
         {
 
         }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (MessageBox.Show("Confirm product category update?", "Updating Product Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+                
+                    cm = new SqlCommand("UPDATE tbCategory_Table SET productCategoryName=@productCategoryName WHERE productCategoryName LIKE '" + categoryNameBox.Text + "'", con);
+                    cm.Parameters.AddWithValue("@productCategoryName", categoryNameBox.Text);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Product Category Updated Successfully");
+                    clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
+
+        public void clear()
+        {
+            categoryNameBox.ResetText();
+        }
+
     }
 }
+
+

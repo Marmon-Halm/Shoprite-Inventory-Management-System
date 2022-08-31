@@ -7,12 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Shoprite_Inventory_Management
 {
     public partial class REGISTER_SYSTEM : Form
-    {
-        public REGISTER_SYSTEM() => InitializeComponent();
+        
+        {
+
+        SqlDataReader dr;
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\micha\OneDrive\Documents\InventoryDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlCommand cm = new SqlCommand();
+        public REGISTER_SYSTEM()
+
+        {
+            InitializeComponent();
+            loadProduct();
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -78,12 +89,62 @@ namespace Shoprite_Inventory_Management
         private void button3_Click(object sender, EventArgs e)
         {
             Product_Modal pm = new Product_Modal();
-            pm.Show();
+            pm.ShowDialog();
+            loadProduct();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void loadProduct()
+        {
+            int i = 0;
+            ppDataView.Rows.Clear();
+            cm = new SqlCommand("SELECT * FROM tbProduct_Table", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                ppDataView.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
+
+            }
+            dr.Close();
+            con.Close();
+        }
+
+        private void ppDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string columnName = ppDataView.Columns[e.ColumnIndex].Name;
+            if(columnName == "Edit")
+            {
+                Product_Modal pm = new Product_Modal();
+                pm.categoryBox.Text = ppDataView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                pm.productName.Text = ppDataView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                pm.productDescription.Text = ppDataView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                pm.price.Text = ppDataView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                pm.quantity.Text = ppDataView.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                pm.button2.Enabled = false;
+                pm.updateBtn.Enabled = true;
+                pm.ShowDialog();
+             
+            }
+            else if(columnName == "Delete")
+            {
+                if (MessageBox.Show("Confirm to delete product", "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
+                {
+                    con.Open();
+                    cm = new SqlCommand("Delete from tbProduct_Table where product_name like '" + ppDataView.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", con);
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Product successfully deleted");
+                }
+            }
+
+            loadProduct();
         }
     }
 }

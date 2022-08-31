@@ -42,8 +42,9 @@ namespace Shoprite_Inventory_Management
         private void Logout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LOGIN_SYSTEM ls = new LOGIN_SYSTEM();
-            this.Hide();
+          
             ls.Show();
+            this.Hide();
         }
 
         private void hpUserManagement_Click(object sender, EventArgs e)

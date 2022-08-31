@@ -18,7 +18,9 @@ namespace Shoprite_Inventory_Management
     
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\micha\OneDrive\Documents\InventoryDB.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cm = new SqlCommand();
-    public Product_Modal() => InitializeComponent();
+        SqlDataReader dr;
+       
+        public Product_Modal() => InitializeComponent();
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -32,19 +34,20 @@ namespace Shoprite_Inventory_Management
 
         private void PManageCloseButton_Click(object sender, EventArgs e)
         {
-           
-                this.Hide();
+                this.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -65,7 +68,8 @@ namespace Shoprite_Inventory_Management
                     con.Close();
                     MessageBox.Show("Product Added Successfully!");
 
-                    Clear();
+                    clear();
+                  
                  
                 }
 
@@ -77,14 +81,9 @@ namespace Shoprite_Inventory_Management
 
         }
 
-        private void Clear()
-        {
-            productName.Clear();
-            productDescription.Clear();
-            price.Clear();
-            quantity.Clear();
+       
 
-        }
+        
 
         private void productName_TextChanged(object sender, EventArgs e)
         {
@@ -93,6 +92,48 @@ namespace Shoprite_Inventory_Management
 
         private void productDescription_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (MessageBox.Show("Confirm product update?", "Updating Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+                {
+
+                    cm = new SqlCommand("Update tbProduct_Table set category=@category,product_name=@product_name,product_description=@product_description,price=@price,quantity=@quantity WHERE product_name like '" + productName.Text + "'", con);
+                }
+                { 
+                    cm.Parameters.AddWithValue("@category", categoryBox.Text);
+                    cm.Parameters.AddWithValue("@product_name", productName.Text);
+                    cm.Parameters.AddWithValue("@product_description", productDescription.Text);
+                    cm.Parameters.AddWithValue("@price", price.Text);
+                    cm.Parameters.AddWithValue("@quantity", quantity.Text);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Product updated successfully");
+                    clear();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void clear()
+        {
+            categoryBox.ResetText();
+            productName.Clear();
+            productDescription.Clear();
+            price.Clear();
+            quantity.Clear();
+
 
         }
     }
