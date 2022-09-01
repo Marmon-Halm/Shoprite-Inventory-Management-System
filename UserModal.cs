@@ -13,7 +13,7 @@ namespace Shoprite_Inventory_Management
 {
     public partial class UserModal : Form
     {
-
+        SqlDataReader dr;
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\micha\OneDrive\Documents\InventoryDB.mdf;Integrated Security=True;Connect Timeout=30");
         SqlCommand cm = new SqlCommand();
         public UserModal()
@@ -46,7 +46,7 @@ namespace Shoprite_Inventory_Management
                     con.Close();
                   
                     MessageBox.Show("User created successfully!");
-
+                    clear();
                 }
 
             }
@@ -99,6 +99,47 @@ namespace Shoprite_Inventory_Management
         private void UserModal_Load(object sender, EventArgs e)
         {
 
+        }
+
+
+        public void clear()
+        {
+            usernameBox.ResetText();
+            FullNameBox.Clear();
+            PORBox.Clear();
+            ContactBox.Clear();
+            textBox1.Clear();
+
+
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (MessageBox.Show("Confirm User Update?", "Updating User Details", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+                {
+
+                    cm = new SqlCommand("Update tbUser set username=@username,fullName=@fullName,placeOfResidence=@placeOfResidence,contact=@contact,password=@password WHERE username like '" + usernameBox.Text + "'", con);
+
+
+                    cm.Parameters.AddWithValue("@username", usernameBox.Text);
+                    cm.Parameters.AddWithValue("@fullName", FullNameBox.Text);
+                    cm.Parameters.AddWithValue("@placeOfResidence", PORBox.Text);
+                    cm.Parameters.AddWithValue("@contact", ContactBox.Text);
+                    cm.Parameters.AddWithValue("@password", textBox1.Text);
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("User Updated Successfully");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

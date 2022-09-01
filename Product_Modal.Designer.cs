@@ -44,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
+            this.productID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PManageCloseButton)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // categoryBox
             // 
+            this.categoryBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryBox.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.categoryBox.FormattingEnabled = true;
             this.categoryBox.Items.AddRange(new object[] {
@@ -216,11 +218,22 @@
             this.updateBtn.UseVisualStyleBackColor = true;
             this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
+            // productID
+            // 
+            this.productID.AutoSize = true;
+            this.productID.Location = new System.Drawing.Point(462, 366);
+            this.productID.Name = "productID";
+            this.productID.Size = new System.Drawing.Size(38, 15);
+            this.productID.TabIndex = 21;
+            this.productID.Text = "label3";
+            this.productID.Visible = false;
+            // 
             // Product_Modal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 461);
+            this.Controls.Add(this.productID);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -265,5 +278,6 @@
         public Button button2;
         public Button updateBtn;
         public Button button1;
+        public Label productID;
     }
 }

@@ -20,11 +20,29 @@ namespace Shoprite_Inventory_Management
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
        
-        public Product_Modal() => InitializeComponent();
+        public Product_Modal()
+        {
+            InitializeComponent();
+            Load_Category();
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void Load_Category()
+        {
+            categoryBox.Items.Clear();
+            cm = new SqlCommand("SELECT productCategoryName FROM tbCategory_table", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                categoryBox.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+            con.Close();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -34,7 +52,7 @@ namespace Shoprite_Inventory_Management
 
         private void PManageCloseButton_Click(object sender, EventArgs e)
         {
-                this.Dispose();
+            this.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,6 +64,8 @@ namespace Shoprite_Inventory_Management
         {
 
         }
+
+
 
 
 
@@ -62,14 +82,14 @@ namespace Shoprite_Inventory_Management
                     cm.Parameters.AddWithValue("@product_description", productDescription.Text);
                     cm.Parameters.AddWithValue("@price", price.Text);
                     cm.Parameters.AddWithValue("@quantity", quantity.Text);
+                    //cm.Parameters.AddWithValue("@id", productID.Text);
 
                     con.Open();
                     cm.ExecuteNonQuery();   
                     con.Close();
                     MessageBox.Show("Product Added Successfully!");
 
-                    clear();
-                  
+                   
                  
                 }
 
@@ -100,11 +120,11 @@ namespace Shoprite_Inventory_Management
             try
             {
 
-                if (MessageBox.Show("Confirm product update?", "Updating Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Confirm Product Update?", "Updating Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 
                 {
 
-                    cm = new SqlCommand("Update tbProduct_Table set category=@category,product_name=@product_name,product_description=@product_description,price=@price,quantity=@quantity WHERE product_name like '" + productName.Text + "'", con);
+                    cm = new SqlCommand("UPDATE tbProduct_Table SET category=@category,product_name=@product_name,product_description=@product_description,price=@price,quantity=@quantity WHERE id LIKE '" + productID.Text + "'", con);
                 }
                 { 
                     cm.Parameters.AddWithValue("@category", categoryBox.Text);
@@ -112,6 +132,7 @@ namespace Shoprite_Inventory_Management
                     cm.Parameters.AddWithValue("@product_description", productDescription.Text);
                     cm.Parameters.AddWithValue("@price", price.Text);
                     cm.Parameters.AddWithValue("@quantity", quantity.Text);
+                    //cm.Parameters.AddWithValue("@id", productID.Text);
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();

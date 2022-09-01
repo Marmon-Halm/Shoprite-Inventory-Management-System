@@ -50,6 +50,7 @@
             this.ppHeader = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -258,6 +259,7 @@
             this.ppDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ppDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number,
+            this.Column1,
             this.ppCategory,
             this.ppProductName,
             this.ppProductDescription,
@@ -311,6 +313,11 @@
             this.number.HeaderText = "No.";
             this.number.Name = "number";
             this.number.Width = 50;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Product ID";
+            this.Column1.Name = "Column1";
             // 
             // ppCategory
             // 
@@ -413,6 +420,7 @@
         private Label label5;
         public DataGridView ppDataView;
         private DataGridViewTextBoxColumn number;
+        private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn ppCategory;
         private DataGridViewTextBoxColumn ppProductName;
         private DataGridViewTextBoxColumn ppProductDescription;

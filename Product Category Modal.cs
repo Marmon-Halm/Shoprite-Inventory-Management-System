@@ -72,14 +72,19 @@ namespace Shoprite_Inventory_Management
             {
                 if (MessageBox.Show("Confirm product category update?", "Updating Product Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 
-                
+
+                {
                     cm = new SqlCommand("UPDATE tbCategory_Table SET productCategoryName=@productCategoryName WHERE productCategoryName LIKE '" + categoryNameBox.Text + "'", con);
+                }
+
+                {
                     cm.Parameters.AddWithValue("@productCategoryName", categoryNameBox.Text);
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Product Category Updated Successfully");
                     clear();
+                }
             }
             catch (Exception ex)
             {
@@ -94,6 +99,10 @@ namespace Shoprite_Inventory_Management
             categoryNameBox.ResetText();
         }
 
+        private void categoryClose_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
 

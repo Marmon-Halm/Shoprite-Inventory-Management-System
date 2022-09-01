@@ -37,9 +37,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.categoryNameBox = new System.Windows.Forms.TextBox();
             this.pcmCategoryName = new System.Windows.Forms.Label();
+            this.categoryClose = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCatCloseButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,6 +100,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Salmon;
+            this.panel3.Controls.Add(this.categoryClose);
             this.panel3.Controls.Add(this.PCatCloseButton);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -122,7 +125,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(142, 19);
+            this.label1.Location = new System.Drawing.Point(130, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 27);
             this.label1.TabIndex = 0;
@@ -147,6 +150,18 @@
             this.pcmCategoryName.TabIndex = 18;
             this.pcmCategoryName.Text = "Product Category Name";
             // 
+            // categoryClose
+            // 
+            this.categoryClose.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.categoryClose.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
+            this.categoryClose.Location = new System.Drawing.Point(447, 12);
+            this.categoryClose.Name = "categoryClose";
+            this.categoryClose.Size = new System.Drawing.Size(42, 37);
+            this.categoryClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.categoryClose.TabIndex = 3;
+            this.categoryClose.TabStop = false;
+            this.categoryClose.Click += new System.EventHandler(this.categoryClose_Click);
+            // 
             // Product_Category_Modal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -163,6 +178,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCatCloseButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,5 +194,6 @@
         public TextBox categoryNameBox;
         public Button button1;
         public Button button3;
+        private PictureBox categoryClose;
     }
 }

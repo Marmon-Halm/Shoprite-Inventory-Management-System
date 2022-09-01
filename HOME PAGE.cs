@@ -108,7 +108,7 @@ namespace Shoprite_Inventory_Management
             while (dr.Read())
             {
                 i++;
-                ppDataView.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
+                ppDataView.Rows.Add(i, dr[5].ToString(), dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
 
             }
             dr.Close();
@@ -121,11 +121,12 @@ namespace Shoprite_Inventory_Management
             if(columnName == "Edit")
             {
                 Product_Modal pm = new Product_Modal();
-                pm.categoryBox.Text = ppDataView.Rows[e.RowIndex].Cells[1].Value.ToString();
-                pm.productName.Text = ppDataView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                pm.productDescription.Text = ppDataView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                pm.price.Text = ppDataView.Rows[e.RowIndex].Cells[4].Value.ToString();
-                pm.quantity.Text = ppDataView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                pm.productID.Text = ppDataView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                pm.categoryBox.Text = ppDataView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                pm.productName.Text = ppDataView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                pm.productDescription.Text = ppDataView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                pm.price.Text = ppDataView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                pm.quantity.Text = ppDataView.Rows[e.RowIndex].Cells[6].Value.ToString();
 
                 pm.button2.Enabled = false;
                 pm.updateBtn.Enabled = true;
