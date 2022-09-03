@@ -49,6 +49,7 @@
             this.hpProductCatButton = new System.Windows.Forms.Button();
             this.hProductButton = new System.Windows.Forms.Button();
             this.cNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -74,6 +75,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNumber,
+            this.Column1,
             this.cName,
             this.Edit,
             this.Delete});
@@ -300,6 +302,11 @@
             this.cNumber.Name = "cNumber";
             this.cNumber.Width = 50;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
             // cName
             // 
             this.cName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -367,6 +374,7 @@
         private Label label4;
         private Label label5;
         private DataGridViewTextBoxColumn cNumber;
+        private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn cName;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;

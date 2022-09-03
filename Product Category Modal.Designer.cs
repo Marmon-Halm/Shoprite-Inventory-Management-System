@@ -33,20 +33,22 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.categoryClose = new System.Windows.Forms.PictureBox();
             this.PCatCloseButton = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.categoryNameBox = new System.Windows.Forms.TextBox();
             this.pcmCategoryName = new System.Windows.Forms.Label();
-            this.categoryClose = new System.Windows.Forms.PictureBox();
+            this.catID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PCatCloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PCatCloseButton)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.catID);
             this.panel1.Controls.Add(this.updateBtn);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button3);
@@ -109,6 +111,18 @@
             this.panel3.Size = new System.Drawing.Size(503, 60);
             this.panel3.TabIndex = 20;
             // 
+            // categoryClose
+            // 
+            this.categoryClose.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.categoryClose.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
+            this.categoryClose.Location = new System.Drawing.Point(447, 12);
+            this.categoryClose.Name = "categoryClose";
+            this.categoryClose.Size = new System.Drawing.Size(42, 37);
+            this.categoryClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.categoryClose.TabIndex = 3;
+            this.categoryClose.TabStop = false;
+            this.categoryClose.Click += new System.EventHandler(this.categoryClose_Click);
+            // 
             // PCatCloseButton
             // 
             this.PCatCloseButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -150,17 +164,15 @@
             this.pcmCategoryName.TabIndex = 18;
             this.pcmCategoryName.Text = "Product Category Name";
             // 
-            // categoryClose
+            // catID
             // 
-            this.categoryClose.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.categoryClose.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
-            this.categoryClose.Location = new System.Drawing.Point(447, 12);
-            this.categoryClose.Name = "categoryClose";
-            this.categoryClose.Size = new System.Drawing.Size(42, 37);
-            this.categoryClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.categoryClose.TabIndex = 3;
-            this.categoryClose.TabStop = false;
-            this.categoryClose.Click += new System.EventHandler(this.categoryClose_Click);
+            this.catID.AutoSize = true;
+            this.catID.Location = new System.Drawing.Point(405, 95);
+            this.catID.Name = "catID";
+            this.catID.Size = new System.Drawing.Size(38, 15);
+            this.catID.TabIndex = 24;
+            this.catID.Text = "label2";
+            this.catID.Visible = false;
             // 
             // Product_Category_Modal
             // 
@@ -177,8 +189,8 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PCatCloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PCatCloseButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +207,6 @@
         public Button button1;
         public Button button3;
         private PictureBox categoryClose;
+        public Label catID;
     }
 }

@@ -74,7 +74,7 @@ namespace Shoprite_Inventory_Management
 
 
                 {
-                    cm = new SqlCommand("UPDATE tbCategory_Table SET productCategoryName=@productCategoryName WHERE productCategoryName LIKE '" + categoryNameBox.Text + "'", con);
+                    cm = new SqlCommand("UPDATE tbCategory_Table SET productCategoryName=@productCategoryName WHERE productCategoryId LIKE '" + catID.Text+ "'", con);
                 }
 
                 {
@@ -105,5 +105,4 @@ namespace Shoprite_Inventory_Management
         }
     }
 }
-
 

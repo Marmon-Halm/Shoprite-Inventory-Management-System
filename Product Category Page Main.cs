@@ -88,7 +88,7 @@ namespace Shoprite_Inventory_Management
             while (dr.Read())
             {
                 i++;
-                dataGridView1.Rows.Add(i, dr[0].ToString());
+                dataGridView1.Rows.Add(i, dr[1].ToString(), dr[0].ToString());
 
             }
             dr.Close();
@@ -101,7 +101,8 @@ namespace Shoprite_Inventory_Management
             if (columnName == "Edit")
             {
                 Product_Category_Modal pm = new Product_Category_Modal();
-                pm.categoryNameBox.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                pm.catID.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                pm.categoryNameBox.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
                 pm.button3.Enabled = false;
                 pm.updateBtn.Enabled = true;

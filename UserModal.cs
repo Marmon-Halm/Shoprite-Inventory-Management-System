@@ -122,7 +122,7 @@ namespace Shoprite_Inventory_Management
 
                 {
 
-                    cm = new SqlCommand("Update tbUser set username=@username,fullName=@fullName,placeOfResidence=@placeOfResidence,contact=@contact,password=@password WHERE username like '" + usernameBox.Text + "'", con);
+                    cm = new SqlCommand("Update tbUser set fullName=@fullName,placeOfResidence=@placeOfResidence,contact=@contact,password=@password WHERE username like '" + usernameBox.Text + "'", con);
 
 
                     cm.Parameters.AddWithValue("@username", usernameBox.Text);
@@ -140,6 +140,8 @@ namespace Shoprite_Inventory_Management
             {
                 MessageBox.Show(ex.Message);
             }
+
+            
         }
     }
 }

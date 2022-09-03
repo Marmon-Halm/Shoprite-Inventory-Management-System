@@ -121,7 +121,9 @@ namespace Shoprite_Inventory_Management
 
                 pm.button1.Enabled = false;
                 pm.UpdateBtn.Enabled = true;
+                pm.usernameBox.Enabled = false;
                 pm.Show();
+                loadUser();
                
 
             }
