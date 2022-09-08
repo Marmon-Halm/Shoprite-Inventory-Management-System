@@ -316,14 +316,15 @@
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Product ID";
+            this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 40;
             // 
             // ppCategory
             // 
             this.ppCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ppCategory.FillWeight = 40F;
-            this.ppCategory.HeaderText = "Category";
+            this.ppCategory.HeaderText = "Product Category";
             this.ppCategory.Name = "ppCategory";
             // 
             // ppProductName
@@ -344,13 +345,12 @@
             // 
             this.ppPrice.HeaderText = "Price";
             this.ppPrice.Name = "ppPrice";
-            this.ppPrice.Width = 79;
+            this.ppPrice.Width = 80;
             // 
             // ppQuantity
             // 
             this.ppQuantity.HeaderText = "Quantity";
             this.ppQuantity.Name = "ppQuantity";
-            this.ppQuantity.Width = 110;
             // 
             // Edit
             // 

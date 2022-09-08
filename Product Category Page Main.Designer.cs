@@ -306,12 +306,13 @@
             // 
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 40;
             // 
             // cName
             // 
             this.cName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cName.FillWeight = 80F;
-            this.cName.HeaderText = "Category Name";
+            this.cName.HeaderText = "Product Category Name";
             this.cName.Name = "cName";
             // 
             // Edit
@@ -319,14 +320,14 @@
             this.Edit.HeaderText = "";
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.Name = "Edit";
-            this.Edit.Width = 50;
+            this.Edit.Width = 40;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.Name = "Delete";
-            this.Delete.Width = 50;
+            this.Delete.Width = 40;
             // 
             // Product_Category_Page_Main
             // 

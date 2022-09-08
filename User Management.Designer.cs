@@ -343,14 +343,14 @@
             this.Edit.HeaderText = "";
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.Name = "Edit";
-            this.Edit.Width = 50;
+            this.Edit.Width = 40;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
             this.Delete.Name = "Delete";
-            this.Delete.Width = 50;
+            this.Delete.Width = 40;
             // 
             // User_Management
             // 
