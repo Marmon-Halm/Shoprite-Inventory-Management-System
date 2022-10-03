@@ -82,13 +82,13 @@ namespace Shoprite_Inventory_Management
         {
             int i = 0;
             dataGridView1.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbCategory_Table", con);
+            cm = new SqlCommand("SELECT * FROM tbCat", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dataGridView1.Rows.Add(i, dr[1].ToString(), dr[0].ToString());
+                dataGridView1.Rows.Add(i, dr[0].ToString(), dr[1].ToString());
 
             }
             dr.Close();
@@ -100,12 +100,11 @@ namespace Shoprite_Inventory_Management
             string columnName = dataGridView1.Columns[e.ColumnIndex].Name;
             if (columnName == "Edit")
             {
-                Product_Category_Modal pm = new Product_Category_Modal();
-                pm.catID.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                pm.categoryNameBox.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                UpdateCategoryModal pm = new UpdateCategoryModal();
+                pm.categoryIDBox.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                pm.updateCategoryNameBox.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
-                pm.button3.Enabled = false;
-                pm.updateBtn.Enabled = true;
+                
                 pm.ShowDialog();
 
             }
@@ -114,7 +113,7 @@ namespace Shoprite_Inventory_Management
                 if (MessageBox.Show("Confirm to delete product category", "Delete Product Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) ;
                 {
                     con.Open();
-                    cm = new SqlCommand("Delete from tbCategory_Table where productCategoryName like '" + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+                    cm = new SqlCommand("Delete from tbCat where CategoryName like '" + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", con);
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Product Category successfully deleted");

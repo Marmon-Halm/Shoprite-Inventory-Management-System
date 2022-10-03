@@ -41,8 +41,8 @@ namespace Shoprite_Inventory_Management
                 if (MessageBox.Show("Confirm To Add Product Category", "Add Product Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    cm = new SqlCommand("INSERT INTO tbCategory_Table(productCategoryName)VALUES(@productCategoryName)", con);
-                    cm.Parameters.AddWithValue("@productCategoryName", categoryNameBox.Text);
+                    cm = new SqlCommand("INSERT INTO tbCat(CategoryName)VALUES(@CategoryName)", con);
+                    cm.Parameters.AddWithValue("@CategoryName", categoryNameBox.Text);
 
                     con.Open();
                     cm.ExecuteNonQuery();
@@ -68,28 +68,7 @@ namespace Shoprite_Inventory_Management
         private void updateBtn_Click(object sender, EventArgs e)
         {
 
-            try
-            {
-                if (MessageBox.Show("Confirm product category update?", "Updating Product Category", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-
-
-                {
-                    cm = new SqlCommand("UPDATE tbCategory_Table SET productCategoryName=@productCategoryName WHERE productCategoryId LIKE '" + catID.Text+ "'", con);
-                }
-
-                {
-                    cm.Parameters.AddWithValue("@productCategoryName", categoryNameBox.Text);
-                    con.Open();
-                    cm.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Product Category Updated Successfully");
-                    clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+          
         }
 
         
@@ -102,6 +81,11 @@ namespace Shoprite_Inventory_Management
         private void categoryClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void counter_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

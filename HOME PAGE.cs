@@ -98,18 +98,20 @@ namespace Shoprite_Inventory_Management
 
         }
 
+       
+
+
         public void loadProduct()
         {
             int i = 0;
             ppDataView.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbProduct_Table", con);
+            cm = new SqlCommand("SELECT * FROM tbProduct", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                ppDataView.Rows.Add(i, dr[5].ToString(), dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
-
+                ppDataView.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
             }
             dr.Close();
             con.Close();
@@ -120,16 +122,15 @@ namespace Shoprite_Inventory_Management
             string columnName = ppDataView.Columns[e.ColumnIndex].Name;
             if(columnName == "Edit")
             {
-                Product_Modal pm = new Product_Modal();
-                pm.productID.Text = ppDataView.Rows[e.RowIndex].Cells[1].Value.ToString();
-                pm.categoryBox.Text = ppDataView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                pm.productName.Text = ppDataView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                pm.productDescription.Text = ppDataView.Rows[e.RowIndex].Cells[4].Value.ToString();
-                pm.price.Text = ppDataView.Rows[e.RowIndex].Cells[5].Value.ToString();
-                pm.quantity.Text = ppDataView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                UpdateProductModal pm = new UpdateProductModal();
+                pm.productIDbox1.Text = ppDataView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                pm.updateCategoryBox.Text = ppDataView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                pm.updatePNamebox.Text = ppDataView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                pm.updatePDbox.Text = ppDataView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                pm.updatePricebox.Text = ppDataView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                pm.updateQuantitybox.Text = ppDataView.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-                pm.button2.Enabled = false;
-                pm.updateBtn.Enabled = true;
+
                 pm.ShowDialog();
              
             }
@@ -138,7 +139,7 @@ namespace Shoprite_Inventory_Management
                 if (MessageBox.Show("Confirm to delete product", "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
                 {
                     con.Open();
-                    cm = new SqlCommand("Delete from tbProduct_Table where product_name like '" + ppDataView.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", con);
+                    cm = new SqlCommand("Delete from tbProduct where productID like '" + ppDataView.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Product successfully deleted");

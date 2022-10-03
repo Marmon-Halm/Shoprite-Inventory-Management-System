@@ -115,31 +115,7 @@ namespace Shoprite_Inventory_Management
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                if (MessageBox.Show("Confirm User Update?", "Updating User Details", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-
-                {
-
-                    cm = new SqlCommand("Update tbUser set fullName=@fullName,placeOfResidence=@placeOfResidence,contact=@contact,password=@password WHERE username like '" + usernameBox.Text + "'", con);
-
-
-                    cm.Parameters.AddWithValue("@username", usernameBox.Text);
-                    cm.Parameters.AddWithValue("@fullName", FullNameBox.Text);
-                    cm.Parameters.AddWithValue("@placeOfResidence", PORBox.Text);
-                    cm.Parameters.AddWithValue("@contact", ContactBox.Text);
-                    cm.Parameters.AddWithValue("@password", textBox1.Text);
-                    con.Open();
-                    cm.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("User Updated Successfully");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
 
             
         }

@@ -99,7 +99,7 @@ namespace Shoprite_Inventory_Management
             while (dr.Read())
             {
                 i++;
-                uDataView.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString());
+                uDataView.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
 
             }
             dr.Close();
@@ -112,16 +112,15 @@ namespace Shoprite_Inventory_Management
             string columnName = uDataView.Columns[e.ColumnIndex].Name;
             if (columnName == "Edit")
             {
-                UserModal pm = new UserModal();
-                pm.usernameBox.Text = uDataView.Rows[e.RowIndex].Cells[1].Value.ToString();
-                pm.FullNameBox.Text = uDataView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                pm.PORBox.Text = uDataView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                pm.ContactBox.Text = uDataView.Rows[e.RowIndex].Cells[4].Value.ToString();
-                pm.textBox1.Text = uDataView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                UpdateUserModal pm = new UpdateUserModal();
+                pm.userIDbox.Text = uDataView.Rows[e.RowIndex].Cells[1].Value.ToString();
+                pm.usernameBoxU.Text = uDataView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                pm.FullNameBoxU.Text = uDataView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                pm.PORBoxU.Text = uDataView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                pm.ContactBoxU.Text = uDataView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                pm.textBox1U.Text = uDataView.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-                pm.button1.Enabled = false;
-                pm.UpdateBtn.Enabled = true;
-                pm.usernameBox.Enabled = false;
+               
                 pm.Show();
                 loadUser();
                
@@ -132,7 +131,7 @@ namespace Shoprite_Inventory_Management
                 if (MessageBox.Show("Confirm to delete user", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     con.Open();
-                    cm = new SqlCommand("Delete from tbUser where username like '" + uDataView.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
+                    cm = new SqlCommand("Delete from tbUser where userID like '" + uDataView.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
                     cm.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("User Successfully Deleted");

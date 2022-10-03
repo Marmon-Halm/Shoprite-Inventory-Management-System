@@ -43,8 +43,6 @@
             this.quantity = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.productID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PManageCloseButton)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 16.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(219, 19);
+            this.label1.Location = new System.Drawing.Point(236, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 27);
             this.label1.TabIndex = 0;
@@ -62,11 +60,10 @@
             // categoryBox
             // 
             this.categoryBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.categoryBox.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.categoryBox.FormattingEnabled = true;
-            this.categoryBox.Items.AddRange(new object[] {
-            "Add A Product Category"});
-            this.categoryBox.Location = new System.Drawing.Point(59, 142);
+            this.categoryBox.Location = new System.Drawing.Point(37, 132);
             this.categoryBox.Name = "categoryBox";
             this.categoryBox.Size = new System.Drawing.Size(245, 28);
             this.categoryBox.TabIndex = 1;
@@ -75,7 +72,7 @@
             // productName
             // 
             this.productName.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.productName.Location = new System.Drawing.Point(375, 141);
+            this.productName.Location = new System.Drawing.Point(353, 131);
             this.productName.Name = "productName";
             this.productName.Size = new System.Drawing.Size(245, 28);
             this.productName.TabIndex = 2;
@@ -84,7 +81,7 @@
             // price
             // 
             this.price.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.price.Location = new System.Drawing.Point(375, 248);
+            this.price.Location = new System.Drawing.Point(353, 238);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(245, 28);
             this.price.TabIndex = 2;
@@ -93,7 +90,7 @@
             // productDescription
             // 
             this.productDescription.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.productDescription.Location = new System.Drawing.Point(59, 248);
+            this.productDescription.Location = new System.Drawing.Point(37, 238);
             this.productDescription.Name = "productDescription";
             this.productDescription.Size = new System.Drawing.Size(245, 28);
             this.productDescription.TabIndex = 2;
@@ -103,18 +100,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(57, 108);
+            this.label2.Location = new System.Drawing.Point(35, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 21);
+            this.label2.Size = new System.Drawing.Size(148, 21);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Category";
+            this.label2.Text = "Product Category";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pmProductName
             // 
             this.pmProductName.AutoSize = true;
             this.pmProductName.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pmProductName.Location = new System.Drawing.Point(375, 108);
+            this.pmProductName.Location = new System.Drawing.Point(353, 98);
             this.pmProductName.Name = "pmProductName";
             this.pmProductName.Size = new System.Drawing.Size(125, 21);
             this.pmProductName.TabIndex = 0;
@@ -124,7 +121,7 @@
             // 
             this.pmProductDescription.AutoSize = true;
             this.pmProductDescription.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pmProductDescription.Location = new System.Drawing.Point(59, 218);
+            this.pmProductDescription.Location = new System.Drawing.Point(37, 208);
             this.pmProductDescription.Name = "pmProductDescription";
             this.pmProductDescription.Size = new System.Drawing.Size(169, 21);
             this.pmProductDescription.TabIndex = 0;
@@ -134,7 +131,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(374, 218);
+            this.label6.Location = new System.Drawing.Point(352, 208);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 21);
             this.label6.TabIndex = 0;
@@ -148,16 +145,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(692, 60);
+            this.panel1.Size = new System.Drawing.Size(644, 60);
             this.panel1.TabIndex = 3;
             // 
             // PManageCloseButton
             // 
             this.PManageCloseButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PManageCloseButton.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
-            this.PManageCloseButton.Location = new System.Drawing.Point(616, 12);
+            this.PManageCloseButton.Location = new System.Drawing.Point(588, 12);
             this.PManageCloseButton.Name = "PManageCloseButton";
-            this.PManageCloseButton.Size = new System.Drawing.Size(42, 34);
+            this.PManageCloseButton.Size = new System.Drawing.Size(33, 34);
             this.PManageCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PManageCloseButton.TabIndex = 2;
             this.PManageCloseButton.TabStop = false;
@@ -167,7 +164,7 @@
             // 
             this.pmQuantity.AutoSize = true;
             this.pmQuantity.Font = new System.Drawing.Font("Georgia", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pmQuantity.Location = new System.Drawing.Point(62, 324);
+            this.pmQuantity.Location = new System.Drawing.Point(37, 313);
             this.pmQuantity.Name = "pmQuantity";
             this.pmQuantity.Size = new System.Drawing.Size(80, 21);
             this.pmQuantity.TabIndex = 0;
@@ -176,7 +173,7 @@
             // quantity
             // 
             this.quantity.Font = new System.Drawing.Font("Georgia", 13.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantity.Location = new System.Drawing.Point(59, 358);
+            this.quantity.Location = new System.Drawing.Point(37, 348);
             this.quantity.Name = "quantity";
             this.quantity.Size = new System.Drawing.Size(245, 28);
             this.quantity.TabIndex = 2;
@@ -186,9 +183,9 @@
             this.button1.BackColor = System.Drawing.Color.Firebrick;
             this.button1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(566, 417);
+            this.button1.Location = new System.Drawing.Point(532, 380);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 33);
+            this.button1.Size = new System.Drawing.Size(100, 33);
             this.button1.TabIndex = 18;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
@@ -198,7 +195,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(362, 416);
+            this.button2.Location = new System.Drawing.Point(434, 380);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 33);
             this.button2.TabIndex = 19;
@@ -206,35 +203,11 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // updateBtn
-            // 
-            this.updateBtn.Enabled = false;
-            this.updateBtn.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.updateBtn.Location = new System.Drawing.Point(460, 416);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(100, 33);
-            this.updateBtn.TabIndex = 20;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
-            // productID
-            // 
-            this.productID.AutoSize = true;
-            this.productID.Location = new System.Drawing.Point(462, 366);
-            this.productID.Name = "productID";
-            this.productID.Size = new System.Drawing.Size(38, 15);
-            this.productID.TabIndex = 21;
-            this.productID.Text = "label3";
-            this.productID.Visible = false;
-            // 
             // Product_Modal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 461);
-            this.Controls.Add(this.productID);
-            this.Controls.Add(this.updateBtn);
+            this.ClientSize = new System.Drawing.Size(644, 421);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
@@ -276,8 +249,6 @@
         public Label pmQuantity;
         public TextBox quantity;
         public Button button2;
-        public Button updateBtn;
         public Button button1;
-        public Label productID;
     }
 }

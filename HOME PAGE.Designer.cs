@@ -46,11 +46,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.ppDataView = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ppHeader = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ppProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +55,10 @@
             this.ppQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ppHeader = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.searchBoxP = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -197,6 +198,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.searchBoxP);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button3);
@@ -259,7 +261,7 @@
             this.ppDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ppDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.number,
-            this.Column1,
+            this.productID,
             this.ppCategory,
             this.ppProductName,
             this.ppProductDescription,
@@ -275,6 +277,68 @@
             this.ppDataView.Size = new System.Drawing.Size(1273, 536);
             this.ppDataView.TabIndex = 1;
             this.ppDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ppDataView_CellContentClick);
+            // 
+            // number
+            // 
+            this.number.HeaderText = "No.";
+            this.number.Name = "number";
+            this.number.Width = 50;
+            // 
+            // productID
+            // 
+            this.productID.HeaderText = "Product ID";
+            this.productID.Name = "productID";
+            this.productID.Width = 130;
+            // 
+            // ppCategory
+            // 
+            this.ppCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ppCategory.FillWeight = 40F;
+            this.ppCategory.HeaderText = "Product Category";
+            this.ppCategory.Name = "ppCategory";
+            // 
+            // ppProductName
+            // 
+            this.ppProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ppProductName.FillWeight = 50F;
+            this.ppProductName.HeaderText = "Product Name";
+            this.ppProductName.Name = "ppProductName";
+            // 
+            // ppProductDescription
+            // 
+            this.ppProductDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ppProductDescription.FillWeight = 70F;
+            this.ppProductDescription.HeaderText = "Product Description";
+            this.ppProductDescription.Name = "ppProductDescription";
+            // 
+            // ppPrice
+            // 
+            this.ppPrice.HeaderText = "Price";
+            this.ppPrice.Name = "ppPrice";
+            this.ppPrice.Width = 80;
+            // 
+            // ppQuantity
+            // 
+            this.ppQuantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ppQuantity.HeaderText = "Quantity";
+            this.ppQuantity.Name = "ppQuantity";
+            this.ppQuantity.Width = 110;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.Name = "Edit";
+            this.Edit.ToolTipText = "Edit Product";
+            this.Edit.Width = 40;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Name = "Delete";
+            this.Delete.ToolTipText = "Edit Product";
+            this.Delete.Width = 40;
             // 
             // label4
             // 
@@ -308,65 +372,14 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Previous";
             // 
-            // number
+            // searchBoxP
             // 
-            this.number.HeaderText = "No.";
-            this.number.Name = "number";
-            this.number.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 40;
-            // 
-            // ppCategory
-            // 
-            this.ppCategory.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ppCategory.FillWeight = 40F;
-            this.ppCategory.HeaderText = "Product Category";
-            this.ppCategory.Name = "ppCategory";
-            // 
-            // ppProductName
-            // 
-            this.ppProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ppProductName.FillWeight = 50F;
-            this.ppProductName.HeaderText = "Product Name";
-            this.ppProductName.Name = "ppProductName";
-            // 
-            // ppProductDescription
-            // 
-            this.ppProductDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ppProductDescription.FillWeight = 70F;
-            this.ppProductDescription.HeaderText = "Product Description";
-            this.ppProductDescription.Name = "ppProductDescription";
-            // 
-            // ppPrice
-            // 
-            this.ppPrice.HeaderText = "Price";
-            this.ppPrice.Name = "ppPrice";
-            this.ppPrice.Width = 80;
-            // 
-            // ppQuantity
-            // 
-            this.ppQuantity.HeaderText = "Quantity";
-            this.ppQuantity.Name = "ppQuantity";
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.Name = "Edit";
-            this.Edit.ToolTipText = "Edit Product";
-            this.Edit.Width = 40;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.Name = "Delete";
-            this.Delete.ToolTipText = "Edit Product";
-            this.Delete.Width = 40;
+            this.searchBoxP.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBoxP.Location = new System.Drawing.Point(533, 38);
+            this.searchBoxP.Name = "searchBoxP";
+            this.searchBoxP.Size = new System.Drawing.Size(260, 29);
+            this.searchBoxP.TabIndex = 24;
+            this.searchBoxP.Text = "Search For Product";
             // 
             // REGISTER_SYSTEM
             // 
@@ -420,7 +433,7 @@
         private Label label5;
         public DataGridView ppDataView;
         private DataGridViewTextBoxColumn number;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn productID;
         private DataGridViewTextBoxColumn ppCategory;
         private DataGridViewTextBoxColumn ppProductName;
         private DataGridViewTextBoxColumn ppProductDescription;
@@ -428,5 +441,6 @@
         private DataGridViewTextBoxColumn ppQuantity;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private TextBox searchBoxP;
     }
 }

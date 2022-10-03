@@ -46,9 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.uDataView = new System.Windows.Forms.DataGridView();
-            this.uHeader = new System.Windows.Forms.Label();
-            this.uUserButton = new System.Windows.Forms.Button();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uUname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ufname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uPOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +55,9 @@
             this.uPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.uHeader = new System.Windows.Forms.Label();
+            this.uUserButton = new System.Windows.Forms.Button();
+            this.searchBoxC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.umClose)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -261,6 +263,7 @@
             this.uDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
+            this.userID,
             this.uUname,
             this.ufname,
             this.uPOR,
@@ -276,52 +279,35 @@
             this.uDataView.TabIndex = 27;
             this.uDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uDataView_CellContentClick);
             // 
-            // uHeader
-            // 
-            this.uHeader.AutoSize = true;
-            this.uHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.uHeader.Location = new System.Drawing.Point(231, 117);
-            this.uHeader.Name = "uHeader";
-            this.uHeader.Size = new System.Drawing.Size(220, 27);
-            this.uHeader.TabIndex = 29;
-            this.uHeader.Text = "User Management";
-            // 
-            // uUserButton
-            // 
-            this.uUserButton.BackColor = System.Drawing.Color.Salmon;
-            this.uUserButton.Font = new System.Drawing.Font("Georgia", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uUserButton.ForeColor = System.Drawing.Color.White;
-            this.uUserButton.Location = new System.Drawing.Point(1348, 111);
-            this.uUserButton.Name = "uUserButton";
-            this.uUserButton.Size = new System.Drawing.Size(146, 41);
-            this.uUserButton.TabIndex = 28;
-            this.uUserButton.Text = "Add A User";
-            this.uUserButton.UseVisualStyleBackColor = false;
-            this.uUserButton.Click += new System.EventHandler(this.uUserButton_Click_1);
-            // 
             // Number
             // 
             this.Number.HeaderText = "No.";
             this.Number.Name = "Number";
             this.Number.Width = 40;
             // 
+            // userID
+            // 
+            this.userID.HeaderText = "User ID";
+            this.userID.Name = "userID";
+            // 
             // uUname
             // 
+            this.uUname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.uUname.FillWeight = 30F;
             this.uUname.HeaderText = "Username";
             this.uUname.Name = "uUname";
-            this.uUname.Width = 120;
             // 
             // ufname
             // 
             this.ufname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ufname.FillWeight = 70F;
+            this.ufname.FillWeight = 40F;
             this.ufname.HeaderText = "Full Name";
             this.ufname.Name = "ufname";
             // 
             // uPOR
             // 
             this.uPOR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.uPOR.FillWeight = 50F;
+            this.uPOR.FillWeight = 30F;
             this.uPOR.HeaderText = "Place Of Recidence";
             this.uPOR.Name = "uPOR";
             // 
@@ -352,12 +338,45 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 40;
             // 
+            // uHeader
+            // 
+            this.uHeader.AutoSize = true;
+            this.uHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.uHeader.Location = new System.Drawing.Point(231, 117);
+            this.uHeader.Name = "uHeader";
+            this.uHeader.Size = new System.Drawing.Size(220, 27);
+            this.uHeader.TabIndex = 29;
+            this.uHeader.Text = "User Management";
+            // 
+            // uUserButton
+            // 
+            this.uUserButton.BackColor = System.Drawing.Color.Salmon;
+            this.uUserButton.Font = new System.Drawing.Font("Georgia", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.uUserButton.ForeColor = System.Drawing.Color.White;
+            this.uUserButton.Location = new System.Drawing.Point(1348, 111);
+            this.uUserButton.Name = "uUserButton";
+            this.uUserButton.Size = new System.Drawing.Size(146, 41);
+            this.uUserButton.TabIndex = 28;
+            this.uUserButton.Text = "Add A User";
+            this.uUserButton.UseVisualStyleBackColor = false;
+            this.uUserButton.Click += new System.EventHandler(this.uUserButton_Click_1);
+            // 
+            // searchBoxC
+            // 
+            this.searchBoxC.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBoxC.Location = new System.Drawing.Point(761, 117);
+            this.searchBoxC.Name = "searchBoxC";
+            this.searchBoxC.Size = new System.Drawing.Size(260, 29);
+            this.searchBoxC.TabIndex = 34;
+            this.searchBoxC.Text = "Search For User";
+            // 
             // User_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1530, 764);
+            this.Controls.Add(this.searchBoxC);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label4);
@@ -407,6 +426,7 @@
         private Label uHeader;
         private Button uUserButton;
         private DataGridViewTextBoxColumn Number;
+        private DataGridViewTextBoxColumn userID;
         private DataGridViewTextBoxColumn uUname;
         private DataGridViewTextBoxColumn ufname;
         private DataGridViewTextBoxColumn uPOR;
@@ -414,5 +434,6 @@
         private DataGridViewTextBoxColumn uPassword;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private TextBox searchBoxC;
     }
 }

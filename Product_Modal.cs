@@ -23,7 +23,7 @@ namespace Shoprite_Inventory_Management
         public Product_Modal()
         {
             InitializeComponent();
-            Load_Category();
+           Load_Category();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -31,19 +31,7 @@ namespace Shoprite_Inventory_Management
 
         }
 
-        public void Load_Category()
-        {
-            categoryBox.Items.Clear();
-            cm = new SqlCommand("SELECT productCategoryName FROM tbCategory_table", con);
-            con.Open();
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                categoryBox.Items.Add(dr[0].ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
+       
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -65,6 +53,19 @@ namespace Shoprite_Inventory_Management
 
         }
 
+        public void Load_Category()
+        {
+            cm = new SqlCommand("SELECT CategoryName FROM tbCat", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                categoryBox.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+            con.Close();
+        }
+
 
 
 
@@ -76,13 +77,12 @@ namespace Shoprite_Inventory_Management
                 if (MessageBox.Show("Confirm To Add Product", "Add New Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    cm = new SqlCommand("INSERT INTO tbProduct_Table(category,product_name,product_description,price,quantity)VALUES(@category,@product_name,@product_description,@price,@quantity)", con);
+                    cm = new SqlCommand("INSERT INTO tbProduct(category,productName,productDescription,price,quantity)VALUES(@category,@productName,@productDescription,@price,@quantity)", con);
                     cm.Parameters.AddWithValue("@category", categoryBox.Text);
-                    cm.Parameters.AddWithValue("@product_name", productName.Text);
-                    cm.Parameters.AddWithValue("@product_description", productDescription.Text);
+                    cm.Parameters.AddWithValue("@productName", productName.Text);
+                    cm.Parameters.AddWithValue("@productDescription", productDescription.Text);
                     cm.Parameters.AddWithValue("@price", price.Text);
                     cm.Parameters.AddWithValue("@quantity", quantity.Text);
-                    //cm.Parameters.AddWithValue("@id", productID.Text);
 
                     con.Open();
                     cm.ExecuteNonQuery();   
@@ -115,37 +115,8 @@ namespace Shoprite_Inventory_Management
 
         }
 
-        private void updateBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (MessageBox.Show("Confirm Product Update?", "Updating Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-
-                {
-
-                    cm = new SqlCommand("UPDATE tbProduct_Table SET category=@category,product_name=@product_name,product_description=@product_description,price=@price,quantity=@quantity WHERE id LIKE '" + productID.Text + "'", con);
-                }
-                { 
-                    cm.Parameters.AddWithValue("@category", categoryBox.Text);
-                    cm.Parameters.AddWithValue("@product_name", productName.Text);
-                    cm.Parameters.AddWithValue("@product_description", productDescription.Text);
-                    cm.Parameters.AddWithValue("@price", price.Text);
-                    cm.Parameters.AddWithValue("@quantity", quantity.Text);
-                    //cm.Parameters.AddWithValue("@id", productID.Text);
-                    con.Open();
-                    cm.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Product updated successfully");
-                    clear();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
+      
 
         public void clear()
         {

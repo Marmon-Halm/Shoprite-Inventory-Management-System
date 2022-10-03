@@ -43,7 +43,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.UpdateBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userManagementCloseButton)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +63,9 @@
             // 
             this.userManagementCloseButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.userManagementCloseButton.Image = global::Shoprite_Inventory_Management.Properties.Resources.close_500px;
-            this.userManagementCloseButton.Location = new System.Drawing.Point(512, 12);
+            this.userManagementCloseButton.Location = new System.Drawing.Point(524, 19);
             this.userManagementCloseButton.Name = "userManagementCloseButton";
-            this.userManagementCloseButton.Size = new System.Drawing.Size(42, 37);
+            this.userManagementCloseButton.Size = new System.Drawing.Size(30, 30);
             this.userManagementCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.userManagementCloseButton.TabIndex = 2;
             this.userManagementCloseButton.TabStop = false;
@@ -163,7 +162,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(291, 393);
+            this.button1.Location = new System.Drawing.Point(381, 393);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 33);
             this.button1.TabIndex = 9;
@@ -203,24 +202,11 @@
             this.textBox1.TabIndex = 12;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.Enabled = false;
-            this.UpdateBtn.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UpdateBtn.Location = new System.Drawing.Point(389, 393);
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(84, 33);
-            this.UpdateBtn.TabIndex = 13;
-            this.UpdateBtn.Text = "Update";
-            this.UpdateBtn.UseVisualStyleBackColor = true;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
-            // 
             // UserModal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 435);
-            this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
@@ -264,6 +250,5 @@
         public TextBox textBox1;
         public Button button1;
         public Button button2;
-        public Button UpdateBtn;
     }
 }

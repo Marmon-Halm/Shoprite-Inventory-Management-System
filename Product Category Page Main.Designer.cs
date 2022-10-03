@@ -31,6 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Category_Page_Main));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -48,11 +53,7 @@
             this.hpUserManagement = new System.Windows.Forms.Button();
             this.hpProductCatButton = new System.Windows.Forms.Button();
             this.hProductButton = new System.Windows.Forms.Button();
-            this.cNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.searchBoxC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,21 +76,55 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNumber,
-            this.Column1,
+            this.categoryID,
             this.cName,
             this.Edit,
             this.Delete});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(233, 171);
+            this.dataGridView1.Location = new System.Drawing.Point(233, 160);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(1272, 543);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // cNumber
+            // 
+            this.cNumber.HeaderText = "No.";
+            this.cNumber.Name = "cNumber";
+            this.cNumber.Width = 50;
+            // 
+            // categoryID
+            // 
+            this.categoryID.HeaderText = "Category ID";
+            this.categoryID.Name = "categoryID";
+            this.categoryID.Width = 145;
+            // 
+            // cName
+            // 
+            this.cName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cName.FillWeight = 80F;
+            this.cName.HeaderText = "Product Category Name";
+            this.cName.Name = "cName";
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.Name = "Edit";
+            this.Edit.Width = 40;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Name = "Delete";
+            this.Delete.Width = 40;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.searchBoxC);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.label4);
@@ -296,38 +331,14 @@
             this.hProductButton.UseVisualStyleBackColor = false;
             this.hProductButton.Click += new System.EventHandler(this.hProductButton_Click);
             // 
-            // cNumber
+            // searchBoxC
             // 
-            this.cNumber.HeaderText = "No.";
-            this.cNumber.Name = "cNumber";
-            this.cNumber.Width = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 40;
-            // 
-            // cName
-            // 
-            this.cName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cName.FillWeight = 80F;
-            this.cName.HeaderText = "Product Category Name";
-            this.cName.Name = "cName";
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.Name = "Edit";
-            this.Edit.Width = 40;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.Name = "Delete";
-            this.Delete.Width = 40;
+            this.searchBoxC.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBoxC.Location = new System.Drawing.Point(733, 119);
+            this.searchBoxC.Name = "searchBoxC";
+            this.searchBoxC.Size = new System.Drawing.Size(260, 29);
+            this.searchBoxC.TabIndex = 23;
+            this.searchBoxC.Text = "Search For Product Category";
             // 
             // Product_Category_Page_Main
             // 
@@ -375,9 +386,10 @@
         private Label label4;
         private Label label5;
         private DataGridViewTextBoxColumn cNumber;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn categoryID;
         private DataGridViewTextBoxColumn cName;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private TextBox searchBoxC;
     }
 }
