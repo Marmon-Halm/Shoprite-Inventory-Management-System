@@ -95,6 +95,23 @@ namespace Shoprite_Inventory_Management
             con.Close();
         }
 
+        public void loadCategoryWithSearch()
+        {
+            int i = 0;
+            dataGridView1.Rows.Clear();
+            cm = new SqlCommand("SELECT * FROM tbCat WHERE CONCAT(categoryID, CategoryName) LIKE '%"+searchBoxC.Text+"%'", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                dataGridView1.Rows.Add(i, dr[0].ToString(), dr[1].ToString());
+
+            }
+            dr.Close();
+            con.Close();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string columnName = dataGridView1.Columns[e.ColumnIndex].Name;
@@ -121,6 +138,15 @@ namespace Shoprite_Inventory_Management
             }
 
             loadCategory();
+        }
+
+        private void searchBox2_Click(object sender, EventArgs e)
+        {
+            loadCategoryWithSearch();
+            if (searchBoxC.Text == "")
+            {
+                loadCategory();
+            }
         }
     }
 }

@@ -57,7 +57,8 @@
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.uHeader = new System.Windows.Forms.Label();
             this.uUserButton = new System.Windows.Forms.Button();
-            this.searchBoxC = new System.Windows.Forms.TextBox();
+            this.searchBoxU = new System.Windows.Forms.TextBox();
+            this.searchBox3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.umClose)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -361,14 +362,28 @@
             this.uUserButton.UseVisualStyleBackColor = false;
             this.uUserButton.Click += new System.EventHandler(this.uUserButton_Click_1);
             // 
-            // searchBoxC
+            // searchBoxU
             // 
-            this.searchBoxC.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchBoxC.Location = new System.Drawing.Point(761, 117);
-            this.searchBoxC.Name = "searchBoxC";
-            this.searchBoxC.Size = new System.Drawing.Size(260, 29);
-            this.searchBoxC.TabIndex = 34;
-            this.searchBoxC.Text = "Search For User";
+            this.searchBoxU.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBoxU.Location = new System.Drawing.Point(739, 117);
+            this.searchBoxU.Name = "searchBoxU";
+            this.searchBoxU.PlaceholderText = "Search For User";
+            this.searchBoxU.Size = new System.Drawing.Size(260, 29);
+            this.searchBoxU.TabIndex = 34;
+            this.searchBoxU.TextChanged += new System.EventHandler(this.searchBoxU_TextChanged);
+            // 
+            // searchBox3
+            // 
+            this.searchBox3.BackColor = System.Drawing.Color.Salmon;
+            this.searchBox3.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBox3.ForeColor = System.Drawing.Color.White;
+            this.searchBox3.Location = new System.Drawing.Point(1005, 111);
+            this.searchBox3.Name = "searchBox3";
+            this.searchBox3.Size = new System.Drawing.Size(104, 41);
+            this.searchBox3.TabIndex = 35;
+            this.searchBox3.Text = "Search";
+            this.searchBox3.UseVisualStyleBackColor = false;
+            this.searchBox3.Click += new System.EventHandler(this.searchBox3_Click);
             // 
             // User_Management
             // 
@@ -376,7 +391,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1530, 764);
-            this.Controls.Add(this.searchBoxC);
+            this.Controls.Add(this.searchBox3);
+            this.Controls.Add(this.searchBoxU);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label4);
@@ -434,6 +450,7 @@
         private DataGridViewTextBoxColumn uPassword;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
-        private TextBox searchBoxC;
+        private TextBox searchBoxU;
+        public Button searchBox3;
     }
 }

@@ -22,7 +22,12 @@ namespace Shoprite_Inventory_Management
 
         {
             InitializeComponent();
-            loadProduct();
+
+            if(searchBoxP.Text == "")
+            {
+                loadProduct();
+            }
+           
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -98,14 +103,30 @@ namespace Shoprite_Inventory_Management
 
         }
 
-       
 
+      
 
         public void loadProduct()
         {
             int i = 0;
             ppDataView.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbProduct", con);
+            cm = new SqlCommand("SELECT * FROM tbProduct ", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                ppDataView.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
+            }
+            dr.Close();
+            con.Close();
+        }
+
+        public void loadProductWithSearch()
+        {
+            int i = 0;
+            ppDataView.Rows.Clear();
+            cm = new SqlCommand("SELECT * FROM tbProduct WHERE CONCAT(category, productName, productDescription, price) LIKE '%"+searchBoxP.Text+"%'", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -147,6 +168,21 @@ namespace Shoprite_Inventory_Management
             }
 
             loadProduct();
+        }
+
+        private void searchBoxP_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void searchBox1_Click(object sender, EventArgs e)
+        {
+             loadProductWithSearch();
+            if (searchBoxP.Text == "")
+            {
+                loadProduct();
+            }
+
         }
     }
 }

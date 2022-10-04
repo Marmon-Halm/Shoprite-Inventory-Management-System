@@ -88,12 +88,30 @@ namespace Shoprite_Inventory_Management
             loadUser();
 
         }
+      
 
         public void loadUser()
         {
             int i = 0;
             uDataView.Rows.Clear();
             cm = new SqlCommand("SELECT * FROM tbUser", con);
+            con.Open();
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                uDataView.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString());
+
+            }
+            dr.Close();
+            con.Close();
+        }
+
+        public void loadUserWithSearch()
+        {
+            int i = 0;
+            uDataView.Rows.Clear();
+            cm = new SqlCommand("SELECT * FROM tbUser WHERE CONCAT(  username,fullName,placeOfResidence,contact) LIKE '%"+searchBoxU.Text+"%'", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -139,6 +157,20 @@ namespace Shoprite_Inventory_Management
             }
 
             loadUser();
+        }
+
+        private void searchBoxU_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBox3_Click(object sender, EventArgs e)
+        {
+            loadUserWithSearch();
+            if (searchBoxU.Text == "")
+            {
+                loadUser();
+            }
         }
     }
 }

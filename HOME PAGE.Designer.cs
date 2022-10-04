@@ -41,7 +41,9 @@
             this.hpProductCatButton = new System.Windows.Forms.Button();
             this.hProductButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.searchBoxp1 = new System.Windows.Forms.Panel();
+            this.searchBox1 = new System.Windows.Forms.Button();
+            this.searchBoxP = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -58,12 +60,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ppHeader = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.searchBoxP = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.searchBoxp1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppDataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,22 +197,46 @@
             this.hProductButton.UseVisualStyleBackColor = false;
             this.hProductButton.Click += new System.EventHandler(this.hProductButton_Click_1);
             // 
-            // panel3
+            // searchBoxp1
             // 
-            this.panel3.Controls.Add(this.searchBoxP);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.ppDataView);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.ppHeader);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(215, 84);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1314, 680);
-            this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.searchBoxp1.Controls.Add(this.searchBox1);
+            this.searchBoxp1.Controls.Add(this.searchBoxP);
+            this.searchBoxp1.Controls.Add(this.button4);
+            this.searchBoxp1.Controls.Add(this.button5);
+            this.searchBoxp1.Controls.Add(this.button3);
+            this.searchBoxp1.Controls.Add(this.ppDataView);
+            this.searchBoxp1.Controls.Add(this.label4);
+            this.searchBoxp1.Controls.Add(this.ppHeader);
+            this.searchBoxp1.Controls.Add(this.label5);
+            this.searchBoxp1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchBoxp1.Location = new System.Drawing.Point(215, 84);
+            this.searchBoxp1.Name = "searchBoxp1";
+            this.searchBoxp1.Size = new System.Drawing.Size(1314, 680);
+            this.searchBoxp1.TabIndex = 3;
+            this.searchBoxp1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // searchBox1
+            // 
+            this.searchBox1.BackColor = System.Drawing.Color.Salmon;
+            this.searchBox1.Font = new System.Drawing.Font("Georgia", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBox1.ForeColor = System.Drawing.Color.White;
+            this.searchBox1.Location = new System.Drawing.Point(799, 34);
+            this.searchBox1.Name = "searchBox1";
+            this.searchBox1.Size = new System.Drawing.Size(100, 38);
+            this.searchBox1.TabIndex = 25;
+            this.searchBox1.Text = "Search";
+            this.searchBox1.UseVisualStyleBackColor = false;
+            this.searchBox1.Click += new System.EventHandler(this.searchBox1_Click);
+            // 
+            // searchBoxP
+            // 
+            this.searchBoxP.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBoxP.Location = new System.Drawing.Point(533, 38);
+            this.searchBoxP.Name = "searchBoxP";
+            this.searchBoxP.PlaceholderText = "Search For Product";
+            this.searchBoxP.Size = new System.Drawing.Size(260, 29);
+            this.searchBoxP.TabIndex = 24;
+            this.searchBoxP.TextChanged += new System.EventHandler(this.searchBoxP_TextChanged);
             // 
             // button4
             // 
@@ -372,15 +397,6 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Previous";
             // 
-            // searchBoxP
-            // 
-            this.searchBoxP.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchBoxP.Location = new System.Drawing.Point(533, 38);
-            this.searchBoxP.Name = "searchBoxP";
-            this.searchBoxP.Size = new System.Drawing.Size(260, 29);
-            this.searchBoxP.TabIndex = 24;
-            this.searchBoxP.Text = "Search For Product";
-            // 
             // REGISTER_SYSTEM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -388,7 +404,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1529, 764);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.searchBoxp1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -404,8 +420,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.searchBoxp1.ResumeLayout(false);
+            this.searchBoxp1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppDataView)).EndInit();
             this.ResumeLayout(false);
 
@@ -424,7 +440,7 @@
         private PictureBox pictureBox2;
         private LinkLabel Logout;
         private PictureBox pictureBox1;
-        private Panel panel3;
+        private Panel searchBoxp1;
         private Label ppHeader;
         private Button button3;
         private Button button4;
@@ -441,6 +457,7 @@
         private DataGridViewTextBoxColumn ppQuantity;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
-        private TextBox searchBoxP;
+        public TextBox searchBoxP;
+        public Button searchBox1;
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_Category_Page_Main));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +37,7 @@
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.searchBoxC = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             this.hpUserManagement = new System.Windows.Forms.Button();
             this.hpProductCatButton = new System.Windows.Forms.Button();
             this.hProductButton = new System.Windows.Forms.Button();
-            this.searchBoxC = new System.Windows.Forms.TextBox();
+            this.searchBox2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,14 +66,14 @@
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNumber,
@@ -124,6 +125,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.searchBox2);
             this.panel1.Controls.Add(this.searchBoxC);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button5);
@@ -137,6 +139,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1529, 764);
             this.panel1.TabIndex = 1;
+            // 
+            // searchBoxC
+            // 
+            this.searchBoxC.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBoxC.Location = new System.Drawing.Point(728, 114);
+            this.searchBoxC.Name = "searchBoxC";
+            this.searchBoxC.PlaceholderText = "Search For Product Category";
+            this.searchBoxC.Size = new System.Drawing.Size(260, 29);
+            this.searchBoxC.TabIndex = 23;
             // 
             // button4
             // 
@@ -186,7 +197,7 @@
             this.cCategoryButton.BackColor = System.Drawing.Color.Salmon;
             this.cCategoryButton.Font = new System.Drawing.Font("Georgia", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cCategoryButton.ForeColor = System.Drawing.Color.White;
-            this.cCategoryButton.Location = new System.Drawing.Point(1346, 113);
+            this.cCategoryButton.Location = new System.Drawing.Point(1336, 111);
             this.cCategoryButton.Name = "cCategoryButton";
             this.cCategoryButton.Size = new System.Drawing.Size(146, 41);
             this.cCategoryButton.TabIndex = 1;
@@ -198,7 +209,7 @@
             // 
             this.cHeader.AutoSize = true;
             this.cHeader.Font = new System.Drawing.Font("Georgia", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cHeader.Location = new System.Drawing.Point(233, 119);
+            this.cHeader.Location = new System.Drawing.Point(233, 114);
             this.cHeader.Name = "cHeader";
             this.cHeader.Size = new System.Drawing.Size(209, 27);
             this.cHeader.TabIndex = 2;
@@ -331,14 +342,18 @@
             this.hProductButton.UseVisualStyleBackColor = false;
             this.hProductButton.Click += new System.EventHandler(this.hProductButton_Click);
             // 
-            // searchBoxC
+            // searchBox2
             // 
-            this.searchBoxC.Font = new System.Drawing.Font("Georgia", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.searchBoxC.Location = new System.Drawing.Point(733, 119);
-            this.searchBoxC.Name = "searchBoxC";
-            this.searchBoxC.Size = new System.Drawing.Size(260, 29);
-            this.searchBoxC.TabIndex = 23;
-            this.searchBoxC.Text = "Search For Product Category";
+            this.searchBox2.BackColor = System.Drawing.Color.Salmon;
+            this.searchBox2.Font = new System.Drawing.Font("Georgia", 11.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBox2.ForeColor = System.Drawing.Color.White;
+            this.searchBox2.Location = new System.Drawing.Point(994, 109);
+            this.searchBox2.Name = "searchBox2";
+            this.searchBox2.Size = new System.Drawing.Size(100, 38);
+            this.searchBox2.TabIndex = 24;
+            this.searchBox2.Text = "Search";
+            this.searchBox2.UseVisualStyleBackColor = false;
+            this.searchBox2.Click += new System.EventHandler(this.searchBox2_Click);
             // 
             // Product_Category_Page_Main
             // 
@@ -391,5 +406,6 @@
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
         private TextBox searchBoxC;
+        public Button searchBox2;
     }
 }
